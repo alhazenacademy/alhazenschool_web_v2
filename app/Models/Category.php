@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
+
+class Category extends Model
+{
+  use SoftDeletes;
+
+  protected $fillable = [
+    'name',
+    'slug'
+  ];
+
+  public function articles()
+  {
+    return $this->hasMany(Article::class);
+  }
+}
