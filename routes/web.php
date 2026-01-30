@@ -26,6 +26,9 @@ Route::get('/lokasi', [LandingController::class, 'lokasi'])->name('lokasi');
 Route::get('/goes-to-school', [LandingController::class, 'goes_to_school'])->name('goes-to-school');
 Route::get('/kompetisi/alhazen-hackathon', [LandingController::class, 'alhazen_hackathon'])->name('alhazen-hackathon');
 
+Route::view('/coming-soon', 'coming_soon')->name('coming-soon');
+
+
 
 // Route::view('/pro', 'pro')->name('adult');
 

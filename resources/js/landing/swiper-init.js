@@ -243,3 +243,24 @@ export const paketSwiper = new Swiper(".swiper-paket", {
     on: {
     },
 });
+
+export const heroSwiper = new Swiper(".heroCardSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: false,
+
+    breakpoints: {
+        640: {
+            slidesPerView: 1.2,
+        },
+        768: {
+            slidesPerView: 1.35,
+        },
+        1024: {
+            slidesPerView: 1.5,
+        },
+        1280: {
+            slidesPerView: 1.75,
+        },
+    },
+});

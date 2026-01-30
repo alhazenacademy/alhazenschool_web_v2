@@ -3,9 +3,10 @@
 
     $nav = [
         ['route' => 'home', 'label' => 'Home'],
-        ['route' => 'artikel', 'label' => 'Artikel'],
-        ['route' => 'about', 'label' => 'Tentang Kami'],
-        ['route' => 'katalog', 'label' => 'Katalog Buku'],
+        ['route' => 'coming-soon', 'label' => 'About'],
+        ['route' => 'coming-soon', 'label' => 'Program'],
+        ['route' => 'coming-soon', 'label' => 'Admission'],
+        ['route' => 'coming-soon', 'label' => 'Blog'],
     ];
 
     // Dropdown "Program"
@@ -31,8 +32,8 @@
 
         {{-- LEFT: Brand --}}
         <a href="{{ route('home') }}" class="flex items-center gap-3">
-            <img src="{{ $logo }}" alt="Alhazen Academy" class="h-8 w-auto" loading="lazy">
-            <span class="sr-only">Alhazen</span>
+            <img src="{{ $logo }}" alt="Alhazen School" class="h-8 w-auto" loading="lazy">
+            <span class="sr-only">Alhazen School</span>
         </a>
 
         {{-- RIGHT: Desktop menu and Dashboard --}}
@@ -47,7 +48,7 @@
                     </li>
 
                     {{-- Dropdown Program --}}
-                    @if ($item['route'] === 'home' && !empty($moreProgramNav))
+                    {{-- @if ($item['route'] === 'home' && !empty($moreProgramNav))
                         <li x-data="{ openMore: false }" class="relative">
                             <button type="button"
                                 @click="openMore = !openMore"@keydown.escape.window="openMore = false"
@@ -72,10 +73,10 @@
                                 @endforeach
                             </div>
                         </li>
-                    @endif
+                    @endif --}}
 
                     {{-- Dropdown Event --}}
-                    @if ($item['route'] === 'home' && !empty($moreEventNav))
+                    {{-- @if ($item['route'] === 'home' && !empty($moreEventNav))
                         <li x-data="{ openEvent: false }" class="relative">
                             <button type="button" @click="openEvent = !openEvent"
                                 @keydown.escape.window="openEvent = false"
@@ -101,21 +102,33 @@
                                 @endforeach
                             </div>
                         </li>
-                    @endif
+                    @endif --}}
                 @endforeach
             </ul>
 
-            {{-- Button: Daftar Kelas Gratis (primary, hover accent) --}}
-            <a href="{{ route('trial') }}"
-                class="my-5 px-4 py-3 inline-flex items-center rounded-xl text-button bg-primary text-white hover:bg-accent hover:scale-105 transition-all duration-200 ease-in-out">
-                Daftar Kelas Gratis
-            </a>
+            <div class="flex items-center gap-4 my-5">
+                <a href="#"
+                class="px-6 py-3 rounded-full text-sm font-semibold
+                        border-2 border-[var(--color-primary)]
+                        text-[var(--color-primary)]
+                        shadow-sm
+                    transition-all duration-300 ease-out
+                    hover:shadow-lg
+                    hover:-translate-y-0.5">
+                    Login
+                </a>
 
-            {{-- Link: Masuk / Login (underlined) --}}
-            <a href="https://apps.alhazen.academy/#/login"
-                class="my-5 inline-flex items-center text-button text-primary underline hover:text-accent transition-all duration-200 ease-in-out">
-                Masuk / Login
-            </a>
+                <a href="#" 
+                class="px-6 py-3 rounded-full text-sm font-semibold text-white
+                    bg-[var(--color-primary)]
+                    shadow-sm
+                    transition-all duration-300 ease-out
+                    hover:shadow-lg
+                    hover:-translate-y-0.5">
+                    Enrollment
+                </a>
+            </div>
+
         </div>
 
         {{-- MOBILE: burger --}}
@@ -141,7 +154,7 @@
                         </li>
 
                         {{-- Dropdown Program --}}
-                        @if ($item['route'] === 'home' && !empty($moreProgramNav))
+                        {{-- @if ($item['route'] === 'home' && !empty($moreProgramNav))
                             <li x-data="{ openProgram: false }">
                                 <button type="button" @click="openProgram = !openProgram"
                                     class="w-full flex items-center justify-between px-4 py-2 text-body {{ request()->routeIs(collect($moreProgramNav)->pluck('route')->all()) ? 'font-medium text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} transition-all duration-200 ease-in-out">
@@ -164,10 +177,10 @@
                                     @endforeach
                                 </div>
                             </li>
-                        @endif
+                        @endif --}}
 
                         {{-- Dropdown Event --}}
-                        @if ($item['route'] === 'home' && !empty($moreEventNav))
+                        {{-- @if ($item['route'] === 'home' && !empty($moreEventNav))
                             <li x-data="{ openEvent: false }">
                                 <button type="button" @click="openEvent = !openEvent"
                                     class="w-full flex items-center justify-between px-4 py-2 text-body {{ request()->routeIs(collect($moreEventNav)->pluck('route')->all()) ? 'font-medium text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} transition-all duration-200 ease-in-out">
@@ -190,25 +203,37 @@
                                     @endforeach
                                 </div>
                             </li>
-
-                        @endif
+                        @endif --}}
                     @endforeach
 
-                    {{-- Mobile: Daftar Kelas Gratis --}}
-                    <li class="px-4 pt-3">
-                        <a href="{{ route('trial') }}"
-                            class="w-full px-4 py-3 inline-flex justify-center rounded-xl text-button bg-primary text-white hover:bg-accent hover:scale-105 transition-all duration-200 ease-in-out"
-                            @click="open = false">
-                            Daftar Kelas Gratis
+                    {{-- Mobile: Login --}}
+                    <li class="px-4 pt-3 mb-3">
+                        <a href="#"
+                        class="w-full px-6 py-3 rounded-full text-sm font-semibold
+                                border-2 border-[var(--color-primary)]
+                                text-[var(--color-primary)]
+                                shadow-sm
+                                inline-flex justify-center
+                                transition-all duration-300 ease-out
+                                hover:shadow-lg
+                                hover:-translate-y-0.5"
+                        @click="open = false">
+                            Login
                         </a>
                     </li>
 
-                    {{-- Mobile: Masuk / Login --}}
-                    <li class="px-4 pb-3">
-                        <a href="https://apps.alhazen.academy/#/login"
-                            class="mt-3 w-full inline-flex justify-center text-button text-primary underline hover:text-accent transition-all duration-200 ease-in-out"
-                            @click="open = false">
-                            Masuk / Login
+                    {{-- Mobile: Enrollment --}}
+                    <li class="px-4 pb-4">
+                        <a href="#"
+                        class="w-full px-6 py-3 rounded-full text-sm font-semibold text-white
+                                bg-[var(--color-primary)]
+                                shadow-sm
+                                inline-flex justify-center
+                                transition-all duration-300 ease-out
+                                hover:shadow-lg
+                                hover:-translate-y-0.5"
+                        @click="open = false">
+                            Enrollment
                         </a>
                     </li>
                 </ul>

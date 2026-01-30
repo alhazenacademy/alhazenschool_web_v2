@@ -169,7 +169,7 @@
     .theme-kids {
         body,
         * {
-            font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+            font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
         }
         h1,
         h2,
@@ -177,7 +177,7 @@
         h4,
         h5,
         h6 {
-            font-family: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+            font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
         }
     }
     .theme-pro {
@@ -198,12 +198,12 @@
 
 @theme {
     /* Base Vars Only (Kids light default) */
-    --color-primary: #059669;
-    --color-secondary: #facc15;
-    --color-accent: #f97316;
-    --color-background: #f9fafb;
-    --color-text: #0f172a;
-    --color-neutral: #e5e7eb;
+    --color-primary: #F97316;
+    --color-secondary: #EA580C;
+    --color-accent: #206A5D;
+    --color-background: #FDFDFD;
+    --color-text: #1F2933;
+    --color-neutral: #D1D5DB;
 
     /* Typography Size Vars */
     /* Headings (shifted down) */
