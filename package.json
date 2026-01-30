@@ -1,5 +1,5 @@
 {
-    "$schema": "https://www.schemastore.org/package.json",
+    "$schema": "https://json.schemastore.org/package.json",
     "private": true,
     "type": "module",
     "scripts": {
@@ -7,11 +7,25 @@
         "dev": "vite"
     },
     "devDependencies": {
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/postcss": "^4.1.14",
+        "@tailwindcss/typography": "^0.5.19",
         "@tailwindcss/vite": "^4.0.0",
+        "autoprefixer": "^10.4.21",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^2.0.0",
-        "tailwindcss": "^4.0.0",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.1.14",
         "vite": "^7.0.7"
+    },
+    "dependencies": {
+        "@fontsource/fredoka": "^5.2.10",
+        "@fontsource/inter": "^5.2.8",
+        "@fontsource/nunito-sans": "^5.2.7",
+        "@fontsource/poppins": "^5.2.7",
+        "alpinejs": "^3.15.0",
+        "flatpickr": "^4.6.13",
+        "swiper": "^12.0.2"
     }
 }

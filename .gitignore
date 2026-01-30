@@ -22,3 +22,41 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Ignore semua isi folder index-footer
+public/assets/kids/index-footer/*
+
+# Tapi tetap track foldernya
+!public/assets/kids/index-footer/
+
+# Kecualikan (tetap track) file bawaan berikut:
+!public/assets/kids/index-footer/Alhazen-Logo-white.png
+!public/assets/kids/index-footer/bg-footer.png
+!public/assets/kids/index-footer/icon-fb.png
+!public/assets/kids/index-footer/icon-ig.png
+!public/assets/kids/index-footer/icon-lkn.png
+!public/assets/kids/index-footer/icon-tkt.png
+!public/assets/kids/index-footer/icon-ytb.png
+!public/assets/kids/index-footer/logo-stem.png
+
+# Ignore semua isi folder program-detail
+public/assets/kids/program-detail/*
+
+# Tapi tetap track foldernya
+!public/assets/kids/program-detail/
+
+# Kecualikan (tetap track) file seed berikut:
+!public/assets/kids/program-detail/anak.webp
+!public/assets/kids/program-detail/icon-program1.png
+!public/assets/kids/program-detail/icon-program2.png
+!public/assets/kids/program-detail/icon-program3.png
+!public/assets/kids/program-detail/icon-program4.png
+!public/assets/kids/program-detail/icon-program5.png
+!public/assets/kids/program-detail/icon-program6.png
+!public/assets/kids/program-detail/maskot-toa-program.png
+
+# Ignore site map files
+!public/sitemap.xml
+!public/sitemap-categories.xml
+!public/sitemap-pages.xml
+!public/sitemap-posts.xml

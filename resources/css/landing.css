@@ -1,0 +1,998 @@
+@import "tailwindcss";
+
+/* scan file */
+@source '../views/components/*.blade.php';
+@source '../views/components/layout.blade.php';
+@source '../views/pages/*.blade.php';
+@source '../views/pages/artikel/*.blade.php';
+@source '../js/landing.js';
+@source '../js/landing/*.js';
+
+/* anti-FOUC Alpine (buat dropdown dsb.) */
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+}
+
+/* Self-Hosted Fonts dengan @font-face */
+@layer base {
+    /* Poppins (Kids body) */
+    /* Poppins 300 — font-light */
+    @font-face {
+        font-family: "Poppins";
+        src: url("../fonts/poppins/poppins-latin-300-normal.woff2")
+            format("woff2");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* 400 — font-normal */
+    @font-face {
+        font-family: "Poppins";
+        src: url("../fonts/poppins/poppins-latin-400-normal.woff2")
+            format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* 500 — font-medium */
+    @font-face {
+        font-family: "Poppins";
+        src: url("../fonts/poppins/poppins-latin-500-normal.woff2")
+            format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* 600 — font-semibold */
+    @font-face {
+        font-family: "Poppins";
+        src: url("../fonts/poppins/poppins-latin-600-normal.woff2")
+            format("woff2");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* 700 — font-bold */
+    @font-face {
+        font-family: "Poppins";
+        src: url("../fonts/poppins/poppins-latin-700-normal.woff2")
+            format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* 800 — font-extrabold */
+    @font-face {
+        font-family: "Poppins";
+        src: url("../fonts/poppins/poppins-latin-800-normal.woff2")
+            format("woff2");
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /* Fredoka (Kids headings) */
+    /* 400 — matches Tailwind: font-normal */
+    @font-face {
+        font-family: "Fredoka";
+        src: url("../fonts/fredoka/fredoka-latin-400-normal.woff2")
+            format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* 500 — matches Tailwind: font-medium */
+    @font-face {
+        font-family: "Fredoka";
+        src: url("../fonts/fredoka/fredoka-latin-500-normal.woff2")
+            format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* 700 — matches Tailwind: font-bold */
+    @font-face {
+        font-family: "Fredoka";
+        src: url("../fonts/fredoka/fredoka-latin-700-normal.woff2")
+            format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* === ALIAS (opsional) untuk menutup gap Tailwind === */
+    /* 600 — Tailwind: font-semibold (pakai file 700 sementara) */
+    @font-face {
+        font-family: "Fredoka";
+        src: url("../fonts/fredoka/fredoka-latin-700-normal.woff2")
+            format("woff2");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* 800 — Tailwind: font-extrabold (pakai file 700 sementara) */
+    @font-face {
+        font-family: "Fredoka";
+        src: url("../fonts/fredoka/fredoka-latin-700-normal.woff2")
+            format("woff2");
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+    }
+    /* (Kalau nanti punya) 300 — Tailwind: font-light */
+    /*
+    @font-face{
+      font-family: 'Fredoka';
+      src: url('../fonts/fredoka/fredoka-latin-300-normal.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    */
+
+    /* Inter (pro body) */
+    @font-face {
+        font-family: "Inter";
+        src: url("../fonts/inter/inter-latin-300-normal.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("../fonts/inter/inter-latin-300-normal.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /* Nunito Sans (pro headings) */
+    @font-face {
+        font-family: "Nunito Sans";
+        src: url("../fonts/nunito-sans/nunito-sans-latin-300-normal.woff2")
+            format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Nunito Sans";
+        src: url("../fonts/nunito-sans/nunito-sans-latin-300-normal.woff2")
+            format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /* Apply Fonts per Theme */
+    .theme-kids {
+        body,
+        * {
+            font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+        }
+    }
+    .theme-pro {
+        body,
+        * {
+            font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+        }
+    }
+}
+
+@theme {
+    /* Base Vars Only (Kids light default) */
+    --color-primary: #F97316;
+    --color-secondary: #EA580C;
+    --color-accent: #206A5D;
+    --color-background: #FDFDFD;
+    --color-text: #1F2933;
+    --color-neutral: #D1D5DB;
+
+    /* Typography Size Vars */
+    /* Headings (shifted down) */
+    --font-size-h1: 3rem; /* 48px, was H2 */
+    --font-size-h2: 2.25rem; /* 36px, was H3 */
+    --font-size-h3: 1.75rem; /* 28px, was H4 */
+    --font-size-h4: 1.375rem; /* 22px, was H5 */
+    --font-size-h5: 1.125rem; /* 18px, was Body */
+    --font-size-body: 1.063rem; /* 17px */
+    --font-size-small: 1rem; /* 16px */
+    --font-size-button: 1.25rem; /* 20px */
+}
+
+@layer utilities {
+    .text-h1 {
+        font-size: var(--font-size-h1);
+        line-height: 1.1;
+    }
+    .text-h2 {
+        font-size: var(--font-size-h2);
+        line-height: 1.2;
+    }
+    .text-h3 {
+        font-size: var(--font-size-h3);
+        line-height: 1.3;
+    }
+    .text-h4 {
+        font-size: var(--font-size-h4);
+        line-height: 1.3;
+    }
+    .text-h5 {
+        font-size: var(--font-size-h5);
+        line-height: 1.4;
+    }
+    .text-body {
+        font-size: var(--font-size-body);
+        line-height: 1.6;
+    }
+    .text-small {
+        font-size: var(--font-size-small);
+        line-height: 1.5;
+    }
+}
+
+/* Overrides untuk themes & dark mode */
+.theme-kids {
+    --color-secondary: #facc15;
+    --color-accent: #f97316;
+    --color-background: #f9fafb;
+    --color-text: #0f172a;
+    --color-neutral: #e5e7eb;
+}
+
+.theme-pro {
+    --color-secondary: #065f46;
+    --color-accent: #27391c;
+    --color-background: #ffffff;
+    --color-text: #111827;
+    --color-neutral: #e5e7eb;
+}
+
+.dark {
+    --color-primary: #10b981;
+    --color-accent: #f59e0b;
+    --color-background: #1f2937;
+    --color-text: #f9fafb;
+    --color-neutral: #374151;
+}
+
+.dark .theme-kids {
+    --color-secondary: #fcd34d;
+}
+
+.dark .theme-pro {
+    --color-secondary: #047857;
+    --color-accent: #166534;
+    --color-background: #111827;
+    --color-text: #f9fafb;
+}
+
+:root {
+    --swiper-theme-color: var(--color-primary);
+    --swiper-pagination-color: var(--color-primary);
+}
+
+/* Student Work */
+.student-work-category {
+    display: inline-block;
+    line-height: 1;
+    width: fit-content;
+}
+
+.student-works-swiper .swiper-slide {
+    height: auto;
+}
+
+.student-works-swiper .swiper-slide > article {
+    height: 100%;
+}
+
+.student-works-swiper .swiper-wrapper {
+    padding-bottom: 2rem;
+}
+
+.student-works-swiper .swiper-pagination {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.student-works-swiper .swiper-pagination-bullet {
+    display: inline-block;
+    margin: 0 4px;
+    width: 12px;
+    height: 12px;
+    background: #e5e7eb;
+    opacity: 0.6;
+    border-radius: 50%;
+    transition: transform 0.2s, opacity 0.2s;
+}
+.student-works-swiper .swiper-pagination-bullet-active {
+    background: var(--color-primary);
+    opacity: 1;
+    transform: scale(1.05);
+}
+/* End Student Work */
+
+/* Student Review */
+@layer base {
+    .swiper-review {
+        position: relative;
+        overflow: visible;
+    }
+    .swiper-review .swiper-slide {
+        height: auto;
+    }
+}
+
+@layer utilities {
+    .swiper-review .swiper-wrapper {
+        align-items: stretch;
+    }
+    .swiper-review .swiper-slide {
+        display: flex;
+    }
+    .review-card {
+        position: relative;
+        z-index: 30;
+        height: 100%;
+    }
+}
+
+@layer utilities {
+    .review-card {
+        min-height: 320px;
+    }
+    @media (min-width: 640px) {
+        .review-card {
+            min-height: 340px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .review-card {
+            min-height: 360px;
+        }
+    }
+}
+
+@layer utilities {
+    .quote-watermark {
+        position: relative;
+        isolation: isolate;
+    }
+    .quote-watermark::before {
+        content: "\275D";
+        position: absolute;
+        left: -6px;
+        top: -14px;
+        font-size: 96px;
+        line-height: 1;
+        background: linear-gradient(180deg, var(--color-primary), #10b981);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        opacity: 0.12;
+        z-index: -1;
+        pointer-events: none;
+    }
+}
+
+@layer utilities {
+    .swiper-review .swiper-pagination,
+    .review-pagination {
+        position: static !important;
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+    .swiper-review .swiper-pagination-bullet {
+        width: 9px;
+        height: 9px;
+        background: color-mix(in oklab, var(--color-primary) 55%, #d1d5db);
+        opacity: 0.45;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+    .swiper-review .swiper-pagination-bullet-active {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        transform: scale(1.1);
+        background: var(--color-primary);
+        box-shadow: 0 0 0 3px
+            color-mix(in oklab, var(--color-primary) 18%, transparent);
+    }
+
+    .review-prev,
+    .review-next {
+        color: var(--color-text);
+        backdrop-filter: saturate(120%);
+    }
+    .swiper-button-disabled.review-prev,
+    .swiper-button-disabled.review-next {
+        opacity: 0.4;
+        cursor: not-allowed;
+        pointer-events: none; /* benar2 tidak bisa diklik */
+    }
+
+    .mascot-pop {
+        transform: translate(-18px, -18px) rotate(-2deg);
+        filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.14))
+            drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+    }
+    @media (min-width: 640px) {
+        .mascot-pop {
+            transform: translate(-22px, -22px) rotate(-1.75deg);
+        }
+    }
+    @media (min-width: 1024px) {
+        .mascot-pop {
+            transform: translate(-26px, -24px) rotate(-1.5deg);
+        }
+    }
+}
+/* End Student Review */
+
+/* Client/Partner */
+@layer utilities {
+    .clients-mask {
+        -webkit-mask-image: linear-gradient(
+            90deg,
+            transparent 0%,
+            #000 8%,
+            #000 92%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            90deg,
+            transparent 0%,
+            #000 8%,
+            #000 92%,
+            transparent 100%
+        );
+    }
+
+    .clients-track {
+        display: flex;
+        align-items: center;
+        gap: var(--gap, 5rem);
+        width: max-content;
+        animation: clients-marquee var(--speed, 45s) linear infinite;
+    }
+    .clients-track:hover {
+        animation-play-state: paused;
+    }
+    .clients-item {
+        flex: 0 0 auto;
+    }
+
+    .clients-img {
+        filter: grayscale(20%) saturate(0.9) contrast(96%) opacity(0.86);
+        transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+    }
+    .clients-img:hover {
+        filter: grayscale(0%) saturate(1) contrast(100%) opacity(1);
+        transform: translateY(-1px);
+    }
+
+    @keyframes clients-marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .clients-track {
+            animation: none;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .clients-item {
+            width: 33.333%;
+            text-align: center;
+            padding: 0.75rem 0;
+        }
+    }
+}
+/* End Client/Partner */
+
+/* Article */
+@layer utilities {
+    .date-notch {
+        position: relative;
+        display: inline-block;
+        padding: 0.35rem 0.6rem;
+        border-radius: 0.75rem;
+        background: white;
+        color: #111827;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+}
+/* End Article */
+
+/* Tutors */
+@layer base {
+    .swiper-tutors {
+        position: relative;
+        overflow: visible;
+    }
+    .swiper-tutors .swiper-slide {
+        height: auto;
+    }
+}
+
+@layer utilities {
+    .tutor-card {
+        position: relative;
+        z-index: 30;
+    }
+    .swiper-tutors .swiper-pagination,
+    .tutors-pagination {
+        position: static !important;
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+    .swiper-tutors .swiper-pagination-bullet {
+        width: 9px;
+        height: 9px;
+        background: color-mix(in oklab, var(--color-primary) 55%, #d1d5db);
+        opacity: 0.45;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+    .swiper-tutors .swiper-pagination-bullet-active {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        transform: scale(1.1);
+        background: var(--color-primary);
+        box-shadow: 0 0 0 3px
+            color-mix(in oklab, var(--color-primary) 18%, transparent);
+    }
+
+    .tutors-prev,
+    .tutors-next {
+        color: var(--color-text);
+    }
+    .swiper-button-disabled.tutors-prev,
+    .swiper-button-disabled.tutors-next {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+
+@layer utilities {
+    .tutor-card-minh {
+        min-height: 160px;
+    }
+    @media (min-width: 768px) {
+        .tutor-card-minh {
+            min-height: 180px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .tutor-card-minh {
+            min-height: 200px;
+        }
+    }
+}
+/* End Tutors */
+
+/* Footer */
+@layer utilities {
+    .full-bg-footer {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+}
+/* End Footer */
+
+/* Trial Class */
+@layer utilities {
+    .btn-shine {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+    }
+    .btn-shine::after {
+        content: "";
+        position: absolute;
+        inset: -12% -35%;
+        background: linear-gradient(
+            115deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 38%,
+            rgba(255, 255, 245, 0.5) 47%,
+            rgba(255, 250, 215, 0.8) 50%,
+            rgba(255, 255, 245, 0.5) 53%,
+            rgba(255, 255, 255, 0) 62%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        transform: translateX(-130%) skewX(-20deg);
+        transition: transform 0.75s ease;
+        pointer-events: none;
+        mix-blend-mode: screen;
+    }
+    .btn-shine:hover::after {
+        transform: translateX(130%) skewX(-20deg);
+    }
+    .btn-shine:active::after {
+        transition-duration: 0.35s;
+    }
+
+    .shine-loop::after {
+        animation: shineSweep 6.8s ease-in-out infinite;
+    }
+    @keyframes shineSweep {
+        0% {
+            transform: translateX(-130%) skewX(-20deg);
+        }
+        45%,
+        100% {
+            transform: translateX(130%) skewX(-20deg);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .btn-shine::after {
+            transition: none;
+            transform: none;
+        }
+        .btn-shine:hover::after {
+            transform: none;
+        }
+        .shine-loop::after {
+            animation: none;
+        }
+    }
+}
+
+@layer utilities {
+    .float-label {
+        @apply absolute left-4 pointer-events-none transition-all duration-200 font-medium;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.95rem;
+        color: color-mix(in oklab, var(--color-neutral) 70%, #000);
+    }
+    [data-filled="true"] .float-label,
+    [data-open="true"] .float-label {
+        top: 0.45rem;
+        transform: translateY(0);
+        font-size: 0.75rem;
+        color: var(--color-primary);
+    }
+    .select-button {
+        @apply w-full rounded-xl border border-[var(--color-neutral)] bg-white px-4 py-3 pt-7 text-left outline-none transition ring-0;
+    }
+    .select-button:focus-visible {
+        @apply ring-2 ring-[var(--color-primary)];
+    }
+    .select-panel {
+        @apply absolute z-50 mt-0 w-full overflow-auto rounded-xl border border-[var(--color-neutral)] bg-white shadow-lg max-h-64;
+    }
+    .option-item {
+        @apply cursor-pointer px-4 py-3 text-[15px] flex items-center gap-2;
+    }
+    .option-item[aria-selected="true"] {
+        @apply font-semibold text-[var(--color-primary)];
+    }
+    .option-item[data-active="true"] {
+        @apply bg-[color-mix(in_oklab,var(--color-primary)_14%,#fff)];
+    }
+}
+
+@layer utilities {
+    .radio {
+        @apply relative inline-grid place-items-center w-5 h-5 rounded-full
+           border-2 border-[color:var(--color-neutral)] bg-white;
+        transition: box-shadow 0.15s ease, border-color 0.15s ease,
+            background-color 0.15s ease;
+    }
+
+    .radio::before {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 9999px;
+        box-shadow: 0 0 0 2px
+            color-mix(in oklab, var(--color-primary) 25%, transparent);
+        opacity: 0;
+        transition: opacity 0.15s ease;
+    }
+
+    .radio::after {
+        content: "";
+        @apply w-3 h-3 rounded-full;
+        background: var(--color-primary);
+        transform: scale(0);
+        transition: transform 0.15s ease;
+        will-change: transform;
+    }
+
+    .peer:checked + .radio {
+        border-color: var(--color-primary);
+        background: color-mix(in oklab, #fff 92%, var(--color-primary));
+    }
+    .peer:checked + .radio::after {
+        transform: scale(1);
+    }
+    .peer:checked + .radio::before {
+        opacity: 0.9;
+    }
+
+    .peer:focus-visible + .radio::before {
+        opacity: 1;
+    }
+
+    label:hover .radio::before {
+        opacity: 0.6;
+    }
+
+    .peer:disabled + .radio {
+        @apply opacity-60 cursor-not-allowed;
+    }
+}
+
+.flatpickr-months {
+    background: var(--color-primary);
+    border-bottom: 1px solid color-mix(in oklab, #000 18%, var(--color-primary));
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.flatpickr-current-month,
+.flatpickr-months .flatpickr-month {
+    color: #fff !important;
+}
+.flatpickr-prev-month,
+.flatpickr-next-month {
+    color: #fff;
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+}
+.flatpickr-prev-month:hover,
+.flatpickr-next-month:hover {
+    background: color-mix(in oklab, #fff 16%, var(--color-primary));
+}
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+    fill: #fff;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background: var(--color-accent, var(--color-primary)) !important;
+    color: #fff;
+    border-color: transparent !important;
+}
+
+.flatpickr-current-month .numInputWrapper input.cur-year {
+    color: #fff !important; /* teks putih */
+}
+/* End Trial Class */
+
+/* Detail Program */
+@layer base {
+    .swiper-detail-program {
+        position: relative;
+        overflow: visible; /* biar slide “ngintip” gak kepotong */
+    }
+    .swiper-detail-program .swiper-slide {
+        height: auto;
+    }
+}
+
+@layer utilities {
+    /* kartu (opsional, kalau pakai kelas ini) */
+    .detail-program-card {
+        position: relative;
+        z-index: 30;
+    }
+
+    /* sejajarkan pagination dengan tombol prev/next di 1 baris */
+    .swiper-detail-program .swiper-pagination,
+    .detail-program-pagination {
+        position: static !important;
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+
+    /* bullets */
+    .swiper-detail-program .swiper-pagination-bullet {
+        width: 9px;
+        height: 9px;
+        background: color-mix(in oklab, var(--color-primary) 55%, #d1d5db);
+        opacity: 0.45;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+    .swiper-detail-program .swiper-pagination-bullet-active {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        transform: scale(1.1);
+        background: var(--color-primary);
+        box-shadow: 0 0 0 3px
+            color-mix(in oklab, var(--color-primary) 18%, transparent);
+    }
+
+    /* tombol */
+    .detail-program-prev,
+    .detail-program-next {
+        color: var(--color-text);
+    }
+    .swiper-button-disabled.detail-program-prev,
+    .swiper-button-disabled.detail-program-next {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+/* End Detail Program */
+
+/* Active Card Detail Program */
+@layer utilities {
+    @media (max-width: 1023.98px) {
+        .lg\:hidden nav::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+/* End Active Card Detail Program */
+
+@layer utilities {
+    .books-pagination,
+    .books-swiper .swiper-pagination {
+        position: static !important;
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .books-pagination .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        border-radius: 9999px;
+        background: color-mix(in oklab, var(--color-primary) 35%, #d1d5db);
+        opacity: 0.5;
+        transition: transform 0.2s ease, opacity 0.2s ease,
+            background-color 0.2s ease;
+    }
+
+    .books-pagination .swiper-pagination-bullet-active {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        transform: scale(1.05);
+        background: var(--color-primary);
+    }
+
+    .books-prev,
+    .books-next {
+        color: var(--color-text);
+        transition: background-color 0.2s ease, color 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    .swiper-button-disabled.books-prev,
+    .swiper-button-disabled.books-next {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+
+/* Paket */
+@layer base {
+    .swiper-paket {
+        position: relative;
+        overflow: visible;
+    }
+
+    .swiper-paket .swiper-slide {
+        height: auto; /* natural seperti tutor */
+    }
+}
+
+@layer utilities {
+    /* Card Paket */
+    .paket-card {
+        position: relative;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        /* TIDAK pakai height:100% */
+    }
+
+    /* Pagination */
+    .swiper-paket .swiper-pagination,
+    .paket-pagination {
+        position: static !important;
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+
+    .swiper-paket .swiper-pagination-bullet {
+        width: 9px;
+        height: 9px;
+        background: color-mix(in oklab, var(--color-primary) 55%, #d1d5db);
+        opacity: 0.45;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .swiper-paket .swiper-pagination-bullet-active {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        transform: scale(1.1);
+        background: var(--color-primary);
+        box-shadow: 0 0 0 3px
+            color-mix(in oklab, var(--color-primary) 18%, transparent);
+    }
+
+    /* Navigation */
+    .paket-prev,
+    .paket-next {
+        color: var(--color-text);
+    }
+
+    .swiper-button-disabled.paket-prev,
+    .swiper-button-disabled.paket-next {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+
+/* Padding ringan seperti tutor */
+@media (min-width: 1024px) {
+    .swiper-paket {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;     /* IE & Edge */
+    scrollbar-width: none;        /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
+}
+
+
+/* End Paket */
