@@ -166,7 +166,7 @@
     }
 
     /* Apply Fonts per Theme */
-    .theme-kids {
+    .theme-main {
         body,
         * {
             font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -206,15 +206,24 @@
     --color-neutral: #D1D5DB;
 
     /* Typography Size Vars */
-    /* Headings (shifted down) */
-    --font-size-h1: 3rem; /* 48px, was H2 */
-    --font-size-h2: 2.25rem; /* 36px, was H3 */
-    --font-size-h3: 1.75rem; /* 28px, was H4 */
-    --font-size-h4: 1.375rem; /* 22px, was H5 */
-    --font-size-h5: 1.125rem; /* 18px, was Body */
-    --font-size-body: 1.063rem; /* 17px */
-    --font-size-small: 1rem; /* 16px */
-    --font-size-button: 1.25rem; /* 20px */
+    /* Headings */
+    --font-size-h1: 3rem;        /* 48px */
+    --font-size-h2: 2.25rem;     /* 36px */
+    --font-size-h3: 1.75rem;     /* 28px */
+    --font-size-h4: 1.375rem;    /* 22px */
+    --font-size-h5: 1.125rem;    /* 18px */
+
+    /* Body */
+    --font-size-body-large: 1.125rem; /* 18px */
+    --font-size-body: 1rem;           /* 16px */
+    --font-size-body-small: 0.875rem; /* 14px */
+
+    /* Button */
+    --font-size-button-large: 1rem;   /* 16px */
+    --font-size-button-small: 0.875rem; /* 14px */
+
+    /* Navigation */
+    --font-size-nav: 0.938rem; /* 15px */
 }
 
 @layer utilities {
@@ -239,49 +248,28 @@
         line-height: 1.4;
     }
     .text-body {
-        font-size: var(--font-size-body);
+        font-size: var(--font-size-body); /* 16px */
         line-height: 1.6;
     }
+    .text-body-large {
+        font-size: var(--font-size-body-large); /* 18px */
+        line-height: 1.65;
+    }
+    .text-body-small,
     .text-small {
-        font-size: var(--font-size-small);
+        font-size: var(--font-size-body-small); /* 14px */
         line-height: 1.5;
     }
 }
 
 /* Overrides untuk themes & dark mode */
-.theme-kids {
-    --color-secondary: #facc15;
-    --color-accent: #f97316;
-    --color-background: #f9fafb;
-    --color-text: #0f172a;
-    --color-neutral: #e5e7eb;
-}
-
-.theme-pro {
-    --color-secondary: #065f46;
-    --color-accent: #27391c;
-    --color-background: #ffffff;
-    --color-text: #111827;
-    --color-neutral: #e5e7eb;
-}
-
-.dark {
-    --color-primary: #10b981;
-    --color-accent: #f59e0b;
-    --color-background: #1f2937;
-    --color-text: #f9fafb;
-    --color-neutral: #374151;
-}
-
-.dark .theme-kids {
-    --color-secondary: #fcd34d;
-}
-
-.dark .theme-pro {
-    --color-secondary: #047857;
-    --color-accent: #166534;
-    --color-background: #111827;
-    --color-text: #f9fafb;
+.theme-main {
+    --color-primary: #F97316;
+    --color-secondary: #EA580C;
+    --color-accent: #206A5D;
+    --color-background: #FDFDFD;
+    --color-text: #1F2933;
+    --color-neutral: #D1D5DB;
 }
 
 :root {

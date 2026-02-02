@@ -78,7 +78,7 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="{{ $theme === 'pro' ? 'theme-pro' : 'theme-kids' }}">
+    <div class="theme-main">
         {{ $slot }}
     </div>
 
