@@ -260,6 +260,18 @@
         font-size: var(--font-size-body-small); /* 14px */
         line-height: 1.5;
     }
+    .text-button-large {
+        font-size: var(--font-size-button-large); /* 16px */
+        line-height: 1.4;
+    }
+    .text-button-small {
+        font-size: var(--font-size-button-small); /* 14px */
+        line-height: 1.4;
+    }
+    .text-nav {
+        font-size: var(--font-size-nav); /* 15px */
+        line-height: 1.4;
+    }
 }
 
 /* Overrides untuk themes & dark mode */
@@ -275,6 +287,23 @@
 :root {
     --swiper-theme-color: var(--color-primary);
     --swiper-pagination-color: var(--color-primary);
+}
+
+/* Additional Color Palette */
+.additional-blue {
+    background-color: #1F509A;
+}
+
+.additional-orange {
+    background-color: #FF9F00;
+}
+
+.additional-purple {
+    background-color: #4D2B8C;
+}
+
+.additional-red {
+    background-color: #D73535;
 }
 
 /* Student Work */

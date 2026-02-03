@@ -1,9 +1,9 @@
 @php
-    $logo = asset('assets/nav-logo.webp');
+    $logo = asset('assets/nav-logo.png');
 
     $nav = [
         ['route' => 'home', 'label' => 'Home'],
-        ['route' => 'coming-soon', 'label' => 'About'],
+        ['route' => 'about', 'label' => 'About'],
         ['route' => 'coming-soon', 'label' => 'Program'],
         ['route' => 'coming-soon', 'label' => 'Admission'],
         ['route' => 'coming-soon', 'label' => 'Blog'],
@@ -22,7 +22,7 @@
     ];
 
     $isActive = fn($name) => (request()->routeIs($name)
-        ? 'font-medium text-[var(--color-text)]/100'
+        ? 'font-bold text-[var(--color-text)]/100'
         : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100') .
         ' whitespace-nowrap pb-1 transition-all duration-200 ease-in-out';
 @endphp
@@ -42,7 +42,7 @@
                 @foreach ($nav as $item)
                     {{-- Menu utama --}}
                     <li>
-                        <a href="{{ route($item['route']) }}" class="{{ $isActive($item['route']) }} text-body">
+                        <a href="{{ route($item['route']) }}" class="{{ $isActive($item['route']) }} text-nav">
                             {{ $item['label'] }}
                         </a>
                     </li>
@@ -108,10 +108,10 @@
 
             <div class="flex items-center gap-4 my-5">
                 <a href="#"
-                class="px-6 py-3 rounded-full text-sm font-semibold
-                        border-2 border-[var(--color-primary)]
-                        text-[var(--color-primary)]
-                        shadow-sm
+                class="px-6 py-3 rounded-full text-button-large font-semibold
+                    border-2 border-[var(--color-primary)]
+                    text-[var(--color-primary)]
+                    shadow-sm
                     transition-all duration-300 ease-out
                     hover:shadow-lg
                     hover:-translate-y-0.5">
@@ -119,7 +119,7 @@
                 </a>
 
                 <a href="#" 
-                class="px-6 py-3 rounded-full text-sm font-semibold text-white
+                class="px-6 py-3 rounded-full text-button-large font-semibold text-white
                     bg-[var(--color-primary)]
                     shadow-sm
                     transition-all duration-300 ease-out

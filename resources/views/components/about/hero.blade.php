@@ -1,57 +1,57 @@
-<section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[var(--color-background)] -z-10"></div>
+<section id="about-hero" class="relative overflow-hidden py-12 lg:py-20" style="background-image: url('{{ asset('assets/kids/about/hero-bg.webp') }}');  background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="max-w-7xl mx-auto px-6 text-center">
 
-    <div class="relative mx-auto px-4 pt-24 pb-6">
-        <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
-            <!-- Kolom Kiri (gambar) -->
-            <div class="relative hidden md:block md:w-1/5 md:h-[300px] lg:h-[400px]">
-                <!-- LEFT TOP -->
-                <figure
-                    class="absolute left-[10%] top-[150px] rotate-[17deg] w-[120px] sm:w-[160px] lg:w-[200px] aspect-[4/5] rounded-[26px] overflow-hidden shadow-2xl">
-                    <img src="{{ $imgLB }}" alt="Foto kegiatan Alhazen Hackathon" class="w-full h-full object-cover" loading="lazy"
-                        decoding="async">
-                </figure>
-
-                <!-- LEFT BOTTOM -->
-                <figure
-                    class="absolute left-[6%] top-[-10px] rotate-[-15deg] w-[120px] sm:w-[160px] lg:w-[200px] aspect-[4/5] rounded-[26px] overflow-hidden shadow-2xl">
-                    <img src="{{ $imgLT }}" alt="Foto kegiatan Alhazen open booth di Jakarta" class="w-full h-full object-cover" loading="lazy"
-                        decoding="async">
-                </figure>
-            </div>
-
-            <!-- Kolom Tengah (konten) -->
-            <div class="md:w-3/5 text-center md:pt-6">
-                <h1 class="text-h2 font-bold text-primary leading-tight text-center">{{ $title }}</h1>
-                <p class="mt-3 text-body text-text max-w-3xl mx-auto">{{ $subtitle }}</p>
-
-                <a href="{{ $ctaHref }}" aria-label="{{ $ctaText }} - Mulai belajar sekarang"
-                    class="mt-3 mb-5 inline-flex items-center gap-2 rounded-xl px-8 py-3 bg-transparent border-1 border-primary text-primary font-semibold shadow-xl hover:scale-105 transition-all duration-300 drop-shadow-2xl">
-                    {{ $ctaText }}
-                </a>
-
-                {{-- LCP image: jangan lazy --}}
-                <img src="{{ $mascot }}" alt="Maskot Alhazen Academy page Tentang Kami"
-                    class="mx-auto w-[360px] md:w-[200px] lg:w-[300px] -mt-5 md:-mt-6" fetchpriority="high"
-                    decoding="async">
-            </div>
-
-            <!-- Kolom Kanan (gambar) -->
-            <div class="relative hidden md:block md:w-1/5 md:h-[300px] lg:h-[400px]">
-                <!-- RIGHT TOP -->
-                <figure
-                    class="absolute right-[6%] top-[40px] rotate-[12deg] w-[120px] sm:w-[160px] lg:w-[200px] aspect-[4/5] rounded-[26px] overflow-hidden shadow-2xl">
-                    <img src="{{ $imgRT }}" alt="Foto kegiatan lomba coding Alhazen Academy" class="w-full h-full object-cover" loading="lazy"
-                        decoding="async">
-                </figure>
-
-                <!-- RIGHT BOTTOM (lebih besar) -->
-                <figure
-                    class="absolute right-[9%] top-[250px] rotate-[-12deg] w-[130px] sm:w-[210px] lg:w-[250px] aspect-[16/11] rounded-[26px] overflow-hidden shadow-2xl">
-                    <img src="{{ $imgRB }}" alt="Foto kegiatan Alhazen goes to school" class="w-full h-full object-cover" loading="lazy"
-                        decoding="async">
-                </figure>
-            </div>
+        <!-- Badge -->
+        <div class="mb-5">
+            <span class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
+                About Us
+            </span>
         </div>
+
+        <!-- Title -->
+        <h1 class="text-h1 font-bold italic leading-tight mb-5">
+            A Global Islamic Technology<br class="hidden md:block">
+            Hybrid School
+        </h1>
+
+        <!-- Description -->
+        <p class="max-w-3xl mx-auto text-body mb-10">
+            Alhazen School is a Global Islamic Technology Hybrid School that delivers a balanced
+            education combining Islamic values, academic excellence, and modern technology.
+        </p>
+
+        <!-- Image Wrapper -->
+        <div class="relative max-w-5xl mx-auto flex justify-center">
+
+            <!-- Main Image -->
+            <img src="{{ asset('assets/kids/about/hero-img.webp') }}" alt="Alhazen Classroom"
+                class="w-full max-w-4xl h-[450px] rounded-[32px] object-cover mx-auto">
+
+            <!-- Floating Left Card -->
+            <div class="hidden md:block absolute -left-20 bottom-6 bg-neutral shadow-xl rounded-3xl py-5 px-6 max-w-xs">
+                <!-- Icon -->
+                <span class="flex items-center justify-center w-6 h-6 mb-3 rounded-full bg-orange-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <path d="M5 13l4 4L19 7" />
+                    </svg>
+                </span>
+                <!-- Text -->
+                <p class="text-sm text-text leading-snug text-left">
+                    Integrated curriculum with technology guided by Islamic Teachings
+                </p>
+            </div>
+
+
+            <!-- Floating Right Badge -->
+            <div class="hidden md:block absolute right-0 top-6 bg-neutral shadow-xl rounded-3xl p-3">
+                <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/108574909"
+                    alt="STEM.org Accreditation Badge - Alhazen School" class="w-[120px] h-auto" loading="lazy"
+                    data-fallback="{{ asset('assets/stem_badge.png') }}"
+                    onerror="this.onerror=null; this.src=this.dataset.fallback;">
+            </div>
+
+        </div>
+
     </div>
 </section>

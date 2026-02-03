@@ -12,7 +12,7 @@ Route::get('/kursus-blender', [LandingController::class, 'kursus_blender'])->nam
 Route::get('/kursus-python', [LandingController::class, 'kursus_python'])->name('kursus-python');
 Route::get('/kursus-php', [LandingController::class, 'kursus_php'])->name('kursus-php');
 Route::get('/program', [LandingController::class, 'program'])->name('program');
-Route::get('/tentang-kami', [LandingController::class, 'about'])->name('about');
+Route::get('/about', [LandingController::class, 'about'])->name('about');
 Route::get('/artikel', [LandingController::class, 'article'])->name('artikel');
 Route::get('/category/{slug}', [LandingController::class, 'category'])->name('category.show');
 Route::get('/holiday-program', [LandingController::class, 'holiday_program'])->name('holiday-program');
