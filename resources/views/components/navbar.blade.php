@@ -4,7 +4,7 @@
     $nav = [
         ['route' => 'home', 'label' => 'Home'],
         ['route' => 'about', 'label' => 'About'],
-        ['route' => 'coming-soon', 'label' => 'Program'],
+        ['route' => 'program', 'label' => 'Program'],
         ['route' => 'coming-soon', 'label' => 'Admission'],
         ['route' => 'coming-soon', 'label' => 'Blog'],
     ];

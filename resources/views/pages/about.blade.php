@@ -1,5 +1,5 @@
-<x-layout title="About Us - Alhazen School" 
-    description="Alhazen School is a children and adult learning institution that focuses on technology education and future skills. With a fun and interactive learning method" 
+<x-layout title="Title - About" 
+    description="Description - About" 
     wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi / Daftar Kelas di Alhazen Academy." :sales-phone="$salesPhone">
     <x-navbar variant="kids" />
 

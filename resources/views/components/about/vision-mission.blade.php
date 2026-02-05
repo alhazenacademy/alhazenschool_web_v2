@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-6">
         {{-- Card --}}
         <div class="relative rounded-[28px] px-10 sm:px-30 py-10 sm:py-20 text-background bg-accent shadow-[0_20px_50px_rgba(16,185,129,.25)]"
-            style="background-image: url('{{ asset('assets/kids/about/about-vision-mission-bg.webp') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            style="background-image: url('{{ asset('assets/kids/about/vision-mission-bg.webp') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
             <div class="flex flex-col sm:flex-row gap-10 items-center">
                 {{-- Content --}}

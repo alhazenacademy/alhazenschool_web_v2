@@ -205,6 +205,11 @@
     --color-text: #1F2933;
     --color-neutral: #D1D5DB;
 
+    --color-aditional-blue: #1F509A;
+    --color-aditional-orange: #FF9F00;
+    --color-aditional-purple: #4D2B8C;
+    --color-aditional-red: #D73535;
+
     /* Typography Size Vars */
     /* Headings */
     --font-size-h1: 3rem;        /* 48px */
@@ -282,6 +287,11 @@
     --color-background: #FDFDFD;
     --color-text: #1F2933;
     --color-neutral: #D1D5DB;
+
+    --color-aditional-blue: #1F509A;
+    --color-aditional-orange: #FF9F00;
+    --color-aditional-purple: #4D2B8C;
+    --color-aditional-red: #D73535;
 }
 
 :root {
@@ -291,19 +301,19 @@
 
 /* Additional Color Palette */
 .additional-blue {
-    background-color: #1F509A;
+    background-color: var(--color-aditional-blue);
 }
 
 .additional-orange {
-    background-color: #FF9F00;
+    background-color: var(--color-aditional-orange);
 }
 
 .additional-purple {
-    background-color: #4D2B8C;
+    background-color: var(--color-aditional-purple);
 }
 
 .additional-red {
-    background-color: #D73535;
+    background-color: var(--color-aditional-red);
 }
 
 /* Student Work */

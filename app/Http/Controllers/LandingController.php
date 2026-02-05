@@ -122,101 +122,10 @@ class LandingController extends Controller
     }
 
     public function program()
-    {   
-        // CTA Sales Phone
-        $salesPhone = optional(SalesNumber::active()->inRandomOrder()->first())->phone_number;
+    {
+        $salesPhone = "081234567890";
 
-        // Section Tutors
-        $tutors = Tutor::active()->ordered()->get();
-        $cards = $tutors->map(function (Tutor $t) {
-            return [
-                'name' => $t->name,
-                'years' => $t->years,
-                'skills' => is_array($t->skills) ? implode(', ', $t->skills) : (string) $t->skills,
-                'photo' => $t->photo_url,     // accessor di model (fallback male/female jika null)
-                'bg-photo' => $t->bg_color_safe, // accessor di model (default aman kalau null)
-                'gender' => $t->gender,        // 'male' | 'female'
-                'bio' => $t->bio,
-            ];
-        })->all();
-
-        // Section Footer
-        $settings = SiteSetting::companySettings();
-        $whatsapp = $settings['whatsapp'] ?? null;
-        $email = $settings['email'] ?? null;
-        $website = $settings['website'] ?? null;
-        $address = $settings['address'] ?? null;
-        $socials = collect($settings['socials'] ?? [])
-            ->where('is_active', true)
-            ->sortBy('sort_order');
-        $programLinks = Program::active()
-            ->ordered()
-            ->get()
-            ->map(function (Program $program) {
-                return [
-                    'label' => $program->name,
-                    'url' => match (strtolower($program->name)) {
-                        'coding', 'coding anak', 'kursus coding' => 'kursus-coding-anak',
-                        'roblox', 'roblox studio' => 'kursus-roblox',
-                        default => 'program',
-                    },      // nama route: route('program', ['tab' => key])
-                    'key' => $program->key,  // dipakai sebagai tab
-                ];
-            })
-            ->all();
-        
-        // Section FAQ
-        $faqs = Faq::active()->ordered()->get();
-        
-        // Section Program Tabs & Content
-        $programs = Program::query()
-            ->with([
-                'info' => function ($q) {
-                    $q->where('context', 'kids_landing');
-                }
-            ])
-            ->active()   // scopeActive()
-            ->lainnya()  // scopeLainnya()
-            ->ordered()  // scopeOrdered()
-            ->get();
-        // === Gantikan $tabs ===
-        $tabs = $programs->map(function (Program $program) {
-            $info = $program->info;
-            return [
-                'key' => $program->key,
-                'label' => $info->title ?? $program->name,
-                'icon' => $info && $info->icon_path
-                    ? asset($info->icon_path)
-                    : null,
-                'bg' => $info->bg_class ?? 'bg-[#E5E7EB]',
-                'textColor' => $info->text_color_class ?? 'text-[#0F172A]',
-                'child' => $info
-                    ? $info->child_image_url   // <-- ini pakai accessor
-                    : asset('assets/kids/program-detail/anak.webp'),
-                'sub' => $info->short_tagline
-                    ?? $info->subtitle
-                    ?? '',
-            ];
-        })->values()->toArray();
-        // === Gantikan $content ===
-        $content = $programs->mapWithKeys(function (Program $program) {
-            $info = $program->info;
-            return [
-                $program->key => [
-                    'title' => $info->title ?? $program->name,
-                    'subtitle' => $info->subtitle ?? '',
-                    'modules' => $info->modules_label ?? '',
-                    'students' => $info->students_label ?? '',
-                    'desc' => $info->description ?? '',
-                    'tools' => $info->tools ?? [],         // dicast array di model
-                    'price' => $info->price_label ?? '',
-                    'ctaText' => $info->cta_text ?? '',
-                    'ctaHref' => $info->cta_href,            // boleh null
-                ],
-            ];
-        })->toArray();
-
-        return view('pages.program', compact('salesPhone', 'cards', 'whatsapp', 'email', 'address', 'website', 'socials', 'faqs', 'tabs', 'content', 'programLinks'));
+        return view('pages.program', compact('salesPhone'));
     }
 
     public function event()
@@ -229,41 +138,9 @@ class LandingController extends Controller
 
     public function about()
     {   
-        // CTA Sales Phone
-        $salesPhone = optional(SalesNumber::active()->inRandomOrder()->first())->phone_number;
+        $salesPhone = "081234567890";
 
-        // Section Map Embed
-        $settings = SiteSetting::companySettings();
-        $mapembed = $settings['map_embed'] ?? null;
-
-        // Section Footer
-        $whatsapp = $settings['whatsapp'] ?? null;
-        $email = $settings['email'] ?? null;
-        $website = $settings['website'] ?? null;
-        $address = $settings['address'] ?? null;
-        $socials = collect($settings['socials'] ?? [])
-            ->where('is_active', true)
-            ->sortBy('sort_order');
-        $programLinks = Program::active()
-            ->ordered()
-            ->get()
-            ->map(function (Program $program) {
-                return [
-                    'label' => $program->name,
-                    'url' => match (strtolower($program->name)) {
-                        'coding', 'coding anak', 'kursus coding' => 'kursus-coding-anak',
-                        'roblox', 'roblox studio' => 'kursus-roblox',
-                        default => 'program',
-                    },      // nama route: route('program', ['tab' => key])
-                    'key' => $program->key,  // dipakai sebagai tab
-                ];
-            })
-            ->all();
-        
-        // Section FAQ
-        $faqs = Faq::active()->ordered()->get();
-
-        return view('pages.about', compact('mapembed', 'whatsapp', 'email', 'address', 'website', 'socials', 'faqs', 'programLinks', 'salesPhone'));
+        return view('pages.about', compact('salesPhone'));
     }
 
     public function article()
