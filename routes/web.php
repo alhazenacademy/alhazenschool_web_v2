@@ -6,31 +6,20 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\TrialClassController;
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
-Route::get('/kursus-coding-anak', [LandingController::class, 'kursus_coding_anak'])->name('kursus-coding-anak');
-Route::get('/kursus-roblox', [LandingController::class, 'kursus_roblox'])->name('kursus-roblox');
-Route::get('/kursus-blender', [LandingController::class, 'kursus_blender'])->name('kursus-blender');
-Route::get('/kursus-python', [LandingController::class, 'kursus_python'])->name('kursus-python');
-Route::get('/kursus-php', [LandingController::class, 'kursus_php'])->name('kursus-php');
-Route::get('/program', [LandingController::class, 'program'])->name('program');
 Route::get('/about', [LandingController::class, 'about'])->name('about');
+Route::get('/program', [LandingController::class, 'program'])->name('program');
+Route::get('/primary-school/full-online-group-learning', [LandingController::class, 'primary_school_full_online_group'])->name('full-online-group-learning');
+Route::get('/primary-school/hybrid-group-learning', [LandingController::class, 'primary_school_hybrid_group'])->name('hybrid-group-learning');
+Route::get('/primary-school/guided-self-learning', [LandingController::class, 'primary_school_guided_self'])->name('guided-self-learning');
+Route::get('/admission', [LandingController::class, 'admission'])->name('admission');
 Route::get('/artikel', [LandingController::class, 'article'])->name('artikel');
 Route::get('/category/{slug}', [LandingController::class, 'category'])->name('category.show');
-Route::get('/holiday-program', [LandingController::class, 'holiday_program'])->name('holiday-program');
-Route::get('/event', [LandingController::class, 'event'])->name('event');
-Route::get('/katalog', action: [LandingController::class, 'katalog'])->name('katalog');
 Route::get('/kelasgratis', [TrialClassController::class, 'index'])->name('trial');
 Route::get('/thank-you', [TrialClassController::class, 'thank_you'])->name('trial.thank_you');
 Route::post('/trial', [TrialClassController::class, 'store'])->name('trial.store');
 Route::post('/leads', [TrialClassController::class, 'storeLead'])->name('leads.store');
-Route::get('/lokasi', [LandingController::class, 'lokasi'])->name('lokasi');
-Route::get('/goes-to-school', [LandingController::class, 'goes_to_school'])->name('goes-to-school');
-Route::get('/kompetisi/alhazen-hackathon', [LandingController::class, 'alhazen_hackathon'])->name('alhazen-hackathon');
 
 Route::view('/coming-soon', 'coming_soon')->name('coming-soon');
-
-
-
-// Route::view('/pro', 'pro')->name('adult');
 
 /** PREVIEW: dummy data (tanpa kirim) — buka http://localhost:8000/_preview/email/trial */
 Route::get('/_preview/email/trial', [TrialClassController::class, 'testTrialToEmail']);

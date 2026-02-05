@@ -60,7 +60,7 @@
             </div>
 
             <!-- Text -->
-            <div class="order-2 lg:order-1 ml-20">
+            <div class="order-2 lg:order-1 lg:ml-20">
                 <h3 class="text-h3 font-bold italic leading-tight mb-5">
                     Blended Learning System
                 </h3>

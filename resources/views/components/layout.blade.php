@@ -1,7 +1,6 @@
 @props([
-    'title' => 'Kursus Coding dan Animasi Terbaik #1 - Alhazen Academy',
-    'description' =>
-        'Belajar Coding dengan tutor berpengalaman dan professional di Alhazen Academy. Kami menyediakan program pelatihan online, offline, dan privat',
+    'title' => 'The 1st Global Islamic Technology Hybrid School in Indonesia - Alhazen School',
+    'description' => 'Alhazen School is the first global Islamic technology hybrid school in Indonesia, providing quality education that integrates Islamic values and technology to prepare future leaders.',
     'ogImage' => asset('assets/nav-logo.webp'),
     'theme' => 'kids', // 'kids' | 'pro'
     'canonical' => null,
@@ -20,7 +19,7 @@
 
     {{-- Script Google Analytics --}}
     <!-- Google Tag Manager -->
-    <script>
+    {{-- <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -35,7 +34,7 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PHST97K2');
-    </script>
+    </script> --}}
     <!-- End Google Tag Manager -->
 
     {{-- DARK PRELOAD: class "dark" SEBELUM CSS --}}
@@ -74,8 +73,8 @@
 <body class="min-h-dvh bg-background text-text dark:bg-background dark:text-text antialiased">
     {{-- Script Google Analytics --}}
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHST97K2" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    {{-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHST97K2" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript> --}}
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="theme-main">
