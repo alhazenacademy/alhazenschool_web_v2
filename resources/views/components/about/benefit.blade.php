@@ -59,13 +59,15 @@
                 <div class="space-y-4">
                     @foreach ($items as $item)
                         <details @if ($item['open']) open @endif
-                            class="group border border-gray-200 rounded-xl p-5 open:bg-neutral/50">
+                            class="group rounded-xl border border-gray-200 p-5 transition-all duration-300 open:bg-neutral/30">
                             <summary class="flex justify-between items-center cursor-pointer font-semibold text-text">
-                                {{ $item['title'] }}
+                                <h6 class="text-h6 font-semibold flex-1">
+                                    {{ $item['title'] }}
+                                </h6>
                                 <span class="text-xl group-open:rotate-45 transition">+</span>
                             </summary>
 
-                            <p class="mt-4 text-gray-600 leading-relaxed">
+                            <p class="mt-4 text-body text-text leading-relaxed">
                                 {{ $item['content'] }}
                             </p>
                         </details>

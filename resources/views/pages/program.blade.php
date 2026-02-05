@@ -8,4 +8,8 @@
     <x-program.list-of-program />
 
     <x-cta-trial-class />
+
+    <x-faq />
+
+    <x-footer />
 </x-layout>

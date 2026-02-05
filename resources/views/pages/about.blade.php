@@ -18,4 +18,8 @@
     <x-about.assesment />
 
     <x-cta-trial-class />
+
+    <x-faq />
+
+    <x-footer />
 </x-layout>

@@ -76,7 +76,7 @@
     ],
 ])
 
-<section id="about-integrated-curriculum" class="relative py-12 lg:py-20">
+<section id="program-list-of-program" class="relative py-12 lg:py-20">
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Section Header -->
