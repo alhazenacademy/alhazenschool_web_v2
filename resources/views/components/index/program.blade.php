@@ -1,83 +1,108 @@
-<section class="py-16 md:py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center relative ">
-            <div class="px-4 sm:px-8 md:px-12 mb-15">
-                <div class="mx-auto max-w-4xl flex flex-col md:flex-row items-start justify-center gap-5">
+@php
+    $programs = [
+        [
+            'title' => 'Primary School Program',
+            'grade' => 'Grade 1 – 6',
+            'desc' =>
+                'Designed for elementary learners, this program focuses on foundational literacy, numeracy, Islamic values, and early exposure to technology through guided hybrid learning.',
+            'image' => asset('assets/kids/index-program/primary.webp'),
+            'status' => 'active',
+            'link' => '#',
+        ],
+        [
+            'title' => 'Junior High School Program',
+            'grade' => 'Grade 7 – 9',
+            'desc' =>
+                'A structured program that strengthens academic competence, critical thinking, and digital skills while nurturing Islamic character and responsible independence.',
+            'image' => asset('assets/kids/index-program/jhs.webp'),
+            'status' => 'coming',
+            'link' => '#',
+        ],
+        [
+            'title' => 'Senior High School Program',
+            'grade' => 'Grade 10 – 12',
+            'desc' =>
+                'Prepares students for higher education and real-world challenges through advanced academic subjects, project-based learning, and technology integration.',
+            'image' => asset('assets/kids/index-program/shs.webp'),
+            'status' => 'coming',
+            'link' => '#',
+        ],
+    ];
+@endphp
 
-                    {{-- Icon kiri (muncul mulai md) --}}
-                    {{-- <img src="{{ asset('assets/kids/index-program/icon1.png') }}" alt="Grad cap icon"
-                        class="hidden md:block w-15 h-15 md:me-2 -rotate-45" loading="lazy" aria-hidden="true"> --}}
+<section id="index-program" class="relative py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        {{-- Card Wrapper --}}
+        <div class="relative rounded-[28px] px-6 sm:px-12 py-12 sm:py-16 text-background bg-accent shadow-[0_20px_50px_rgba(16,185,129,.25)]"
+            style="background-image: url('{{ asset('assets/kids/about/about-vision-mission-bg.webp') }}'); background-size: contain; background-position: center; background-repeat: no-repeat;">
 
-                    {{-- Judul + subjudul --}}
-                    <div class="text-center pt-5">
-                        <h2 class="text-h2 font-bold text-primary leading-tight text-center mb-4">
-                            {{ $title }}
-                        </h2>
-                        <p class="text-body text-text max-w-xl md:max-w-2xl mx-auto md:mx-0">
-                            {{ $subtitle }}
-                        </p>
-                    </div>
-
-                    {{-- Icon kanan (muncul mulai md) --}}
-                    {{-- <img src="{{ asset('assets/kids/index-program/icon2.png') }}" alt="Laptop icon"
-                        class="hidden md:block w-15 h-15 md:ms-2 rotate-45" loading="lazy" aria-hidden="true"> --}}
-
+            {{-- Header --}}
+            <div class="items-center text-center max-w-2xl mx-auto mb-12">
+                <div class="mb-5">
+                    <span
+                        class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-accent text-accent bg-background">
+                        Our Education Pathway
+                    </span>
                 </div>
+
+                <h2 class="text-h2 font-bold italic leading-tight mb-5">
+                    Study with Alhazen School
+                </h2>
+
+                <p class="text-body text-center">
+                    Alhazen School offers structured school programs designed to support students at different learning
+                    stages through an integrated Islamic, academic, and technology-based hybrid education model.
+                </p>
             </div>
-        </div>
 
-        <div class="relative">
-            <!-- Gambar background di pojok kiri atas -->
-            <img src="{{ asset('assets/kids/index-program/maskot-hi.webp') }}" alt="Maskot Alhazen Academy melambaikan tangan menyapa"
-                class="hidden lg:block absolute left-20 bottom-75 -rotate-20 w-auto h-60 translate-y-2 md:-translate-y-4 opacity-90 object-contain z-0 pointer-events-none drop-shadow-xl"
-                loading="lazy">
+            {{-- Program Cards --}}
+            <div class="grid grid-cols-1 px-4 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach ($programs as $program)
+                    <div class="bg-white rounded-3xl p-5 shadow-md flex flex-col h-full text-gray-900">
 
-            <!-- Grid card -->
-            <div
-                class="relative grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-7 max-w-4xl mx-auto justify-items-center lg:justify-items-stretch">
-                @foreach ($cards as $card)
-                    <div class="w-full max-w-[280px]">
-                        @php
-                            $isViewAll = isset($card['title']) && strcasecmp($card['title'], 'View All') === 0;
-                        @endphp
-                        <div class="group mx-auto rounded-xl relative overflow-hidden {{ $card['bg'] }} hover:shadow-xl transition-all duration-300 h-28 sm:h-36 lg:h-44 will-change-transform hover:cursor-pointer"
-                            onclick="location.href='{{ $isViewAll
-                                ? route($card['url'], absolute: false)
-                                : route($card['url'], ['tab' => $card['key'] ?? Str::slug($card['title'])], false) . '#program' }}'">
+                        <img src="{{ asset($program['image']) }}" class="w-full h-40 object-cover rounded-2xl mb-5"
+                            alt="{{ $program['title'] }}">
 
-                            @php
-                                $fallback = asset('assets/kids/program-detail/anak.webp');
+                        <h3 class="text-h5 font-bold">
+                            {{ $program['title'] }}
+                        </h3>
 
-                                $photo = $card['child'] ?? null;
-                            @endphp
-                            <img src="{{ $photo ?: $fallback }}"
-                                onerror="this.onerror=null;this.src='{{ $fallback }}';"
-                                alt="{{ $card['title'] }} child"
-                                class="absolute right-2 top-5 w-1/2 h-full object-cover z-20 pointer-events-none select-none"
-                                loading="lazy" />
+                        <p class="text-sm text-gray-500 mb-3">
+                            {{ $program['grade'] }}
+                        </p>
 
-                            <div
-                                class="absolute bottom-4 left-6 w-17 h-17 flex items-center justify-center transition-transform duration-300 ease-out will-change-transform origin-bottom-left group-hover:-rotate-12 group-hover:-translate-y-1 group-hover:translate-x-1">
-                                <img src="{{ $card['icon'] }}" alt="{{ $card['title'] }} icon"
-                                    class="w-auto h-full pointer-events-none select-none" loading="lazy">
-                            </div>
+                        <p class="text-gray-600 text-body mb-6 flex-grow">
+                            {{ $program['desc'] }}
+                        </p>
 
-                            <div
-                                class="absolute top-3 left-6 {{ $card['text-color'] }} transition-all duration-300 ease-out group-hover:z-50 group-hover:scale-[1.03] group-hover:drop-shadow-[0_2px_10px_rgba(0,0,0,0.2)]">
-                                <h3 class="relative text-h3 sm:text-sm font-bold leading-tight mb-0.5">
-                                    {{ $card['title'] }}
-                                </h3>
-                                <p class="text-small sm:text-xs leading-tight opacity-90">{{ $card['sub'] }}</p>
-                            </div>
-
-                            <span
-                                class="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/5"></span>
-                        </div>
+                        {{-- Button --}}
+                        @if ($program['status'] === 'active')
+                            <a href="{{ $program['link'] }}"
+                                class="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-white text-sm font-semibold w-fit mx-auto">
+                                Learn More
+                                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </a>
+                        @else
+                            <button
+                                class="inline-flex items-center gap-2 rounded-full bg-gray-200 px-4 py-2 text-gray-500 text-sm font-semibold w-fit mx-auto cursor-not-allowed">
+                                Coming Soon
+                                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-gray-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        @endif
                     </div>
                 @endforeach
             </div>
+
         </div>
-
-
     </div>
 </section>

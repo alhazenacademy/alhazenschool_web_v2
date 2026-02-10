@@ -264,3 +264,14 @@ export const heroSwiper = new Swiper(".heroCardSwiper", {
         },
     },
 });
+
+export const learningSwiper = new Swiper(".learningSwiper", {
+    modules: [Navigation, Pagination, A11y],
+    grabCursor: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: { nextEl: ".learning-next", prevEl: ".learning-prev" },
+    on: {
+    },
+});
