@@ -1,82 +1,166 @@
-<section class="relative py-14 sm:py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-            <h2 class="text-h2 font-bold text-primary mb-4">{!! $title !!}</h2>
-            <p class="text-body max-w-2xl mx-auto text-neutral-content">{!! $description !!}</p>
+@php
+    $featuredArticles = [
+        [
+            'title' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'desc' =>
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.',
+            'image' => asset('assets/kids/index-article/article.webp'),
+            'category' => 'Theme',
+            'author' => 'Jhon Doe',
+            'date' => 'Jan 7, 2026',
+            'avatar' => asset('assets/profile.png'),
+        ],
+        [
+            'title' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'desc' =>
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.',
+            'image' => asset('assets/kids/index-article/article.webp'),
+            'category' => 'Theme',
+            'author' => 'Jhon Doe',
+            'date' => 'Jan 7, 2026',
+            'avatar' => asset('assets/profile.png'),
+        ],
+    ];
+
+    $sideArticles = [
+        [
+            'title' => 'Lorem Ipsum',
+            'desc' =>
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.',
+            'author' => 'Lorem Admin',
+            'date' => '22 Dec 2025',
+            'avatar' => asset('assets/profile.png'),
+        ],
+        [
+            'title' => 'Lorem Ipsum',
+            'desc' =>
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.',
+            'author' => 'Lorem Admin',
+            'date' => '22 Dec 2025',
+            'avatar' => asset('assets/profile.png'),
+        ],
+        [
+            'title' => 'Lorem Ipsum',
+            'desc' =>
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.',
+            'author' => 'Lorem Admin',
+            'date' => '22 Dec 2025',
+            'avatar' => asset('assets/profile.png'),
+        ],
+    ];
+@endphp
+
+<section id="articles" class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="inline-block mb-4 text-primary rounded-full border border-primary px-4 py-1 text-sm">
+                Latest Updates
+            </span>
+
+            <h2 class="text-h2 font-bold italic mb-4">
+                Insights & Articles
+            </h2>
+
+            <p class="text-body text-gray-600">
+                Explore articles and insights on education, Islamic values, technology, and learning approaches that
+                support student growth in a modern world.
+            </p>
         </div>
-        @if ($featured)
-            <a href="{{ $featured['url'] ?? '#' }}" class="block group">
-                <figure
-                    class="relative rounded-[28px] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,.15)] transition-shadow duration-300 group-hover:shadow-[0_28px_70px_rgba(0,0,0,.18)]">
 
-                    <img src="{{ $featured->cover_image_url }}" alt="Cover artikel tentang {{ $featured->title }}"
-                        class="w-full h-[240px] sm:h-[320px] md:h-[480px] object-cover
-                transition-transform duration-500 ease-out will-change-transform
-                group-hover:scale-[1.06]" />
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10">
 
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent
-                transition-opacity duration-300 group-hover:opacity-90">
-                    </div>
+            <!-- Left Featured Articles -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @foreach ($featuredArticles as $article)
+                    <a href="#"
+                        class="relative block rounded-2xl overflow-hidden group transition-all duration-300">
 
-                    <div class="absolute left-5 top-5">
-                        <span
-                            class="inline-block px-3 py-1 rounded-full text-[13px] font-semibold bg-white text-slate-800 shadow">Artikel
-                            Unggulan</span>
-                    </div>
+                        <img src="{{ asset($article['image']) }}"
+                            class="w-full h-[570px] object-cover transition-transform duration-500 group-hover:scale-105"
+                            alt="{{ $article['title'] }}">
 
-                    <figcaption class="absolute left-5 right-5 bottom-5 flex items-end gap-3">
-                        <div class="bg-white rounded-2xl px-5 py-4 shadow-[0_12px_30px_rgba(0,0,0,.15)] max-w-[720px]">
-                            <div class="text-[12px] font-semibold text-slate-500 mb-1">
-                                {{ $featured->published_at_formatted }}
-                            </div>
-                            <h3
-                                class="text-h4 sm:text-body md:text-h5 font-medium leading-snug text-slate-900 transition-colors duration-300 group-hover:text-[var(--color-primary)]">
-                                {{ $featured->title }}
-                            </h3>
-                        </div>
+                        <!-- Overlay Card -->
+                        <div
+                            class="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
 
-                        <span class="ml-auto hidden sm:inline-flex">
                             <span
-                                class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-[#F59E0B] text-white font-semibold shadow hover:brightness-105">
-                                Baca Artikel
-                                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M5 12h14M13 5l7 7-7 7" />
-                                </svg>
+                                class="inline-block mb-2 text-xs text-primary border border-primary px-3 py-1 rounded-full">
+                                {{ $article['category'] }}
                             </span>
-                        </span>
-                    </figcaption>
-                </figure>
-            </a>
-        @endif
 
-        @if (count($posts))
-            <div class="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                @foreach ($posts as $p)
-                    <a href="{{ $p->url ?? '#' }}" class="group block rounded-[20px] p-3 ">
-                        <div class="relative rounded-[16px] overflow-hidden">
-                            <img src="{{ $p->cover_image_url }}" alt="Cover artikel tentang {{ $p->title }}"
-                                class="w-full h-[160px] object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.06]" />
-                            <div class="absolute right-0 bottom-0">
-                                <span class="date-notch text-[12px] font-semibold">{{ $p->published_at_formatted }}</span>
+                            <h3 class="font-bold text-h4 mb-2 group-hover:text-primary transition">
+                                {{ $article['title'] }}
+                            </h3>
+
+                            <p class="text-body text-gray-600 mb-4">
+                                {{ $article['desc'] }}
+                            </p>
+
+                            <div class="flex items-center gap-3 text-sm text-gray-500">
+                                <img src="{{ asset($article['avatar']) }}" class="w-7 h-7 rounded-full object-cover"
+                                    alt="{{ $article['author'] }}">
+                                <span class="font-medium text-gray-800">
+                                    {{ $article['author'] }}
+                                </span>
+                                <span>{{ $article['date'] }}</span>
                             </div>
                         </div>
 
-                        <h4
-                            class="text-body mt-3 font-medium text-slate-900 transition-colors group-hover:text-[var(--color-primary)]">
-                            {{ $p->title }}
-                        </h4>
                     </a>
                 @endforeach
-            </div>
-        @endif
 
-        <div class="text-center mt-8 sm:mt-10">
-            <a href="{{ $allUrl }}"
-                class="mt-3 mb-5 inline-flex items-center gap-2 rounded-xl px-8 py-3 bg-transparent border-1 border-primary text-primary font-semibold shadow-xl hover:scale-105 transition-all duration-300 drop-shadow-2xl">
-                Lihat Semua Artikel
+            </div>
+
+            <!-- Right Side Articles -->
+            <div class="space-y-8">
+                @foreach ($sideArticles as $article)
+                    <a href="#"
+                        class="group block rounded-xl p-3 transition-all duration-200
+               hover:bg-white hover:shadow-sm">
+
+                        <h3
+                            class="font-bold text-h4 mb-1 transition-colors duration-200 group-hover:text-primary">
+                            {{ $article['title'] }}
+                        </h3>
+
+                        <p class="text-body text-gray-600 mb-2">
+                            {{ $article['desc'] }}
+                        </p>
+
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <img src="{{ asset($article['avatar']) }}" class="w-6 h-6 rounded-full object-cover"
+                                alt="{{ $article['author'] }}">
+                            <span class="font-medium text-gray-800">
+                                {{ $article['author'] }}
+                            </span>
+                            <span>{{ $article['date'] }}</span>
+                        </div>
+
+                    </a>
+                @endforeach
+
+            </div>
+
+        </div>
+
+        <!-- Button -->
+        <div class="text-center mt-14">
+            <a href="#"
+                class="inline-flex items-center gap-2.5 rounded-full bg-primary px-5 py-2 text-white text-base font-semibold shadow-md transition-transform duration-200 hover:scale-105">
+                <span>Other Article</span>
+
+                <!-- Arrow Icon -->
+                <span class="flex items-center justify-center w-7 h-7 rounded-full bg-orange-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
             </a>
+
         </div>
 
     </div>

@@ -15,6 +15,14 @@
 
     <x-index.program />
 
+    <x-index.learning-program />
+
+    <x-articles />
+
     <x-cta-trial-class />
+
+    <x-faq />
+
+    <x-footer />
 
 </x-layout>

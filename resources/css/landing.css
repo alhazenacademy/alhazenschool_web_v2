@@ -1023,3 +1023,14 @@
 
 
 /* End Paket */
+
+/* Index Our School Program */
+.learningProgramSwiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.learningProgramSwiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+/* End Index Our School Program */

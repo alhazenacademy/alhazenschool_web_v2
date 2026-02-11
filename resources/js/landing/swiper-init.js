@@ -275,3 +275,19 @@ export const learningSwiper = new Swiper(".learningSwiper", {
     on: {
     },
 });
+
+export const learningProgramSwiper = new Swiper(".learningProgramSwiper", {
+    modules: [Navigation, Pagination, A11y],
+    grabCursor: true,
+    slidesPerView: 1.75,
+    centeredSlides: false,
+    spaceBetween: 24,
+    breakpoints: {
+        640: {
+            slidesPerView: 1.2,
+        },
+        1024: {
+            slidesPerView: 1.75,
+        },
+    },
+});
