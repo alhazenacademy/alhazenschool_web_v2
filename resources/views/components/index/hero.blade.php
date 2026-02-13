@@ -5,7 +5,7 @@
             'desc' =>
                 'Alhazen School is a Global Islamic Technology Hybrid School that integrates Islamic values, academic excellence, and digital skills.',
             'image' => asset('assets/kids/index-hero/hero1.webp'),
-            'bg' => 'bg-[#1F509A]',
+            'bg' => 'additional-blue',
             'link' => '#',
         ],
         [
@@ -13,7 +13,15 @@
             'desc' =>
                 'We collaborate with educators and institutions to build technology-driven and Islamic-based learning systems.',
             'image' => asset('assets/kids/index-hero/hero2.webp'),
-            'bg' => 'bg-[#FF9F00]',
+            'bg' => 'additional-orange',
+            'link' => '#',
+        ],
+        [
+            'title' => 'For Learning Programs',
+            'desc' =>
+                'Alhazen School offers structured learning programs that combine Islamic character building with technology and innovation.',
+            'image' => asset('assets/kids/index-hero/hero3.webp'),
+            'bg' => 'additional-purple',
             'link' => '#',
         ],
     ];
@@ -22,8 +30,8 @@
 <section id="home" class="relative overflow-hidden py-20">
 
     <div class="relative mx-auto max-w-7xl px-6">
-        <div class="flex items-start gap-16">
-            <div class="max-w-[640px] pr-16 space-y-8">
+        <div class="flex items-start">
+            <div class="max-w-[550px] xl:max-w-[600px] 2xl:max-w-[750px] pr-10 space-y-8">
 
                 {{-- Badges --}}
                 <div class="flex gap-2">
@@ -31,12 +39,10 @@
                         class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
                         Hybrid Learning
                     </span>
-
                     <span
                         class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
                         Islamic Values
                     </span>
-
                     <span
                         class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
                         Global Curriculum
@@ -44,11 +50,11 @@
                 </div>
 
                 {{-- TITLE --}}
-                <h1 class="text-h1 leading-[1.1] font-extrabold italic">
+                <h1 class="text-h1 font-bold italic leading-tight mb-5">
                     The 1st Global Islamic Technology Hybrid School in Indonesia
                 </h1>
 
-                <p class="text-body">
+                <p class="text-body text-justify">
                     A future Islamic school integrating STEM, technology, and the Q system, guided by Islamic teachings.
                     We deliver holistic education led by world-class tutors, rooted in the Qur’an and Sunnah of the
                     Salaf.
@@ -75,29 +81,28 @@
                     </p>
                 </div>
             </div>
-            <div class="flex-1"></div>
         </div>
     </div>
 
 
-    <div class=" relative mt-12 lg:absolute lg:top-0 lg:right-0 lg:w-[680px] xl:w-[768px] lg:mt-0 lg:pt-10 flex items-start">
-        <div class="w-full overflow-hidden lg:pl-12">
+    <div class=" relative mt-12 lg:absolute lg:top-0 lg:right-0 lg:w-[500px] xl:w-[680px] 2xl:w-[768px] lg:mt-0 lg:pt-10 px-5 lg:px-0 flex items-start">
+        <div class="w-full overflow-hidden lg:pl-10">
             <div class="swiper heroCardSwiper cursor-grab">
                 <div class="swiper-wrapper">
                     @foreach ($heroCards as $card)
                         <div class="swiper-slide w-[500px] shrink-0">
                             <div
-                                class="rounded-3xl shadow-xl text-white {{ $card['bg'] }} p-8 min-h-[655px] flex flex-col">
-                                <div class="h-[348px] rounded-2xl overflow-hidden mb-5 shrink-0">
+                                class="{{ $card['bg'] }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col min-h-[600px]">
+                                <div class="h-[300px] rounded-2xl overflow-hidden mb-6 shrink-0">
                                     <img src="{{ $card['image'] }}" alt="{{ $card['title'] }}"
-                                        class="w-full h-full object-cover">
+                                        class="w-full h-full object-cover brightness-70">
                                 </div>
                                 <div class="flex flex-col flex-1 text-center px-3">
                                     <div class="flex-1 space-y-3">
-                                        <h3 class="font-semibold text-h4">
+                                        <h4 class="font-bold text-h4">
                                             {{ $card['title'] }}
-                                        </h3>
-                                        <p class="text-body opacity-90 leading-relaxed">
+                                        </h4>
+                                        <p class="text-sm opacity-90 leading-relaxed">
                                             {{ $card['desc'] }}
                                         </p>
                                     </div>

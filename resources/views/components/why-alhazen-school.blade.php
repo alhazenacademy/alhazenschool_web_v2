@@ -1,4 +1,5 @@
 @props([
+    'mt' => '',
     'whyCards' => [
         [
             'number' => 1,
@@ -51,8 +52,8 @@
     ],
 ])
 
-<section id="primary-school-why-alhazen-school" class="relative overflow-hidden py-12 lg:py-20">
-    <div class="relative mx-auto max-w-7xl px-6 lg:mt-30">
+<section id="why-alhazen-school" class="relative overflow-hidden py-12 lg:py-20">
+    <div class="relative mx-auto max-w-7xl px-6 {{ $mt }}">
         <div class="flex flex-col lg:flex-row items-center gap-20 mb-20">
             <div>
                 <!-- Badge -->
@@ -64,9 +65,9 @@
                 </div>
 
                 <!-- Title -->
-                <h3 class="text-h3 font-bold italic leading-tight mb-5">
+                <h2 class="text-h2 font-bold italic leading-tight mb-5">
                     Why Alhazen School?
-                </h3>
+                </h2>
 
                 <!-- Description -->
                 <p class="text-body text-justify">
@@ -78,7 +79,7 @@
 
             <div class="flex-shrink-0 hidden md:block">
                 <div class="relative">
-                    <img src="{{ asset('assets/kids/primary-school/why-alhazen-school-img.webp') }}"
+                    <img src="{{ asset('assets/kids/why-alhazen-school/img.webp') }}"
                         alt="Why Alhazen School Image" class="w-140 h-90 object-cover rounded-[32px] brightness-70">
                 </div>
             </div>

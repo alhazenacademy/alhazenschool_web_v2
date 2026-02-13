@@ -50,20 +50,23 @@
     ];
 @endphp
 
-<section id="articles" class="py-16 lg:py-24 bg-gray-50">
+<section id="articles" class="py-16 lg:py-24">
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto mb-14">
-            <span class="inline-block mb-4 text-primary rounded-full border border-primary px-4 py-1 text-sm">
-                Latest Updates
-            </span>
+            <div class="mb-5">
+                <span
+                    class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
+                    Latest Updates
+                </span>
+            </div>
 
-            <h2 class="text-h2 font-bold italic mb-4">
+            <h2 class="text-h2 font-bold italic leading-tight mb-5">
                 Insights & Articles
             </h2>
 
-            <p class="text-body text-gray-600">
+            <p class="text-body-large">
                 Explore articles and insights on education, Islamic values, technology, and learning approaches that
                 support student growth in a modern world.
             </p>
@@ -118,11 +121,9 @@
             <div class="space-y-8">
                 @foreach ($sideArticles as $article)
                     <a href="#"
-                        class="group block rounded-xl p-3 transition-all duration-200
-               hover:bg-white hover:shadow-sm">
+                        class="group block rounded-xl p-3 transition-all duration-200 hover:bg-white hover:shadow-sm">
 
-                        <h3
-                            class="font-bold text-h4 mb-1 transition-colors duration-200 group-hover:text-primary">
+                        <h3 class="font-bold text-h4 mb-1 transition-colors duration-200 group-hover:text-primary">
                             {{ $article['title'] }}
                         </h3>
 
@@ -149,13 +150,13 @@
         <!-- Button -->
         <div class="text-center mt-14">
             <a href="#"
-                class="inline-flex items-center gap-2.5 rounded-full bg-primary px-5 py-2 text-white text-base font-semibold shadow-md transition-transform duration-200 hover:scale-105">
+                class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-white font-semibold shadow-lg transition-transform duration-200 hover:scale-105">
                 <span>Other Article</span>
 
                 <!-- Arrow Icon -->
                 <span class="flex items-center justify-center w-7 h-7 rounded-full bg-orange-600">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2.5">
+                        stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                 </span>

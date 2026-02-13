@@ -44,7 +44,7 @@
 
     <x-primary-school.program-objective title="Designed for Students and Families Who Value Independence" description="This program is ideal for families who want flexible, independent learning supported by structured materials, teacher guidance, and direct, active parental involvement in the learning process." :objectives="$objectives"  />
 
-    <x-primary-school.why-alhazen-school />
+    <x-why-alhazen-school mt="2xl:mt-20" />
 
     <x-primary-school.school-facilities />
 

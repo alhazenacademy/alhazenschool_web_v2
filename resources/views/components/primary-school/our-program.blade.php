@@ -58,7 +58,7 @@
                                     <!-- Image -->
                                     <div class="flex justify-center order-1 lg:order-2">
                                         <img src="{{ asset($slide['image']) }}" alt="{{ $slide['title'] }}"
-                                            class="w-full max-w-sm h-48 sm:h-64 lg:h-[360px] rounded-2xl object-cover"
+                                            class="w-full max-w-sm h-48 sm:h-64 lg:h-[360px] rounded-2xl object-cover brightness-70"
                                             loading="lazy">
                                     </div>
 

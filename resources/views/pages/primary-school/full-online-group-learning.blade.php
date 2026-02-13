@@ -44,7 +44,7 @@
 
     <x-primary-school.program-objective title="Designed for Students and Families Who Need Flexibility" description="This program is ideal for families seeking accessible, structured education that supports academic progress, Islamic character development, and collaborative learning—without being limited by location or mobility." :objectives="$objectives"  />
 
-    <x-primary-school.why-alhazen-school />
+    <x-why-alhazen-school mt="2xl:mt-20" />
 
     <x-primary-school.school-facilities />
 

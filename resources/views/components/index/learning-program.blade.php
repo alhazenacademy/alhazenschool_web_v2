@@ -9,8 +9,8 @@
                 'Interactive discussions and guided instruction',
                 'Access to digital learning materials and assignments',
             ],
-            'image' => asset('assets/kids/about/benefit-img-2.webp'),
-            'bg' => 'bg-[#1F509A]',
+            'image' => asset('assets/kids/index-program-learning/img-1.webp'),
+            'bg' => 'additional-blue',
         ],
         [
             'title' => 'Hybrid Group Learning',
@@ -21,29 +21,44 @@
                 'Scheduled face-to-face classes with teachers',
                 'Supported by e-learning materials and assignments',
             ],
-            'image' => asset('assets/kids/index-program-learning/hybrid-group-learning.webp'),
-            'bg' => 'bg-[#FF9F00]',
+            'image' => asset('assets/kids/index-program-learning/img-2.webp'),
+            'bg' => 'additional-orange',
+        ],
+        [
+            'title' => 'Guided Self Learning',
+            'desc' =>
+                'An independent learning program supported by structured guidance, digital resources, and regular evaluations to build responsibility and learning confidence.',
+            'points' => [
+                'Parent-guided learning with structured syllabus',
+                'Access to learning modules and digital resources',
+                'Regular teacher monitoring and evaluation',
+            ],
+            'image' => asset('assets/kids/index-program-learning/img-3.webp'),
+            'bg' => 'additional-purple',
         ],
     ];
 @endphp
 
-<section id="learning-system" class="relative py-16 lg:py-24">
+<section id="learning-system" class="relative py-12 lg:py-40">
 
     <!-- Container kiri -->
     <div class="relative mx-auto max-w-7xl px-6">
         <div class="flex items-center gap-16">
 
             <!-- Left Content -->
-            <div class="max-w-[520px] space-y-6">
-                <span class="inline-block text-primary rounded-full border border-primary px-4 py-1 text-sm">
-                    Learning System
-                </span>
+            <div class="max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px]">
+                <div class="mb-5">
+                    <span
+                        class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
+                        Learning System
+                    </span>
+                </div>
 
-                <h2 class="text-h2 font-bold italic">
+                <h2 class="text-h2 font-bold italic leading-tight mb-5">
                     Our School Program
                 </h2>
 
-                <p class="text-body text-justify">
+                <p class="text-body text-justify mb-5">
                     Alhazen School offers structured school programs designed to support students through a flexible
                     hybrid learning model while maintaining strong academic and Islamic foundations.
                 </p>
@@ -54,24 +69,22 @@
                 </p>
             </div>
 
-            <!-- Spacer agar layout seperti hero -->
-            <div class="flex-1"></div>
         </div>
     </div>
 
     <!-- Swiper kanan (keluar container) -->
     <div
-        class="relative mt-12 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 lg:w-[720px] xl:w-[820px] lg:mt-0 flex items-start">
+        class="relative mt-12 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0 lg:w-[500px] xl:w-[680px] 2xl:w-[768px] lg:mt-0 flex items-start">
 
-        <div class="w-full lg:pl-12">
+        <div class="w-full overflow-hidden pl-6 lg:pl-12">
             <div class="swiper learningProgramSwiper cursor-grab">
                 <div class="swiper-wrapper">
 
                     @foreach ($learningPrograms as $program)
-                        <div class="swiper-slide w-[420px] shrink-0">
+                        <div class="swiper-slide w-[500px] shrink-0">
                             <div
-                                class="rounded-3xl p-6 text-white {{ $program['bg'] }}
-                                flex flex-col min-h-[420px]">
+                                class="rounded-3xl p-6 pb-12 text-white {{ $program['bg'] }}
+                                flex flex-col min-h-[500px] lg:min-h-[580px] 2xl:min-h-[550px]">
 
                                 <img src="{{ asset($program['image']) }}"
                                     class="w-full h-40 sm:h-44 lg:h-48 object-cover rounded-2xl mb-5"
@@ -104,4 +117,3 @@
     </div>
 
 </section>
-

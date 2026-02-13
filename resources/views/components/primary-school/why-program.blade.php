@@ -28,9 +28,9 @@
                 </div>
 
                 <!-- Title -->
-                <h3 class="text-h3 font-bold italic leading-tight mb-5">
+                <h2 class="text-h2 font-bold italic leading-tight mb-5">
                     {{ $title }}
-                </h3>
+                </h2>
 
                 <!-- Description -->
                 <p class="text-body text-justify mb-5">

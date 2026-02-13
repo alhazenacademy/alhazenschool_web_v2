@@ -44,7 +44,7 @@
 
     <x-primary-school.program-objective title="Designed for Students and Families Who Need Balance" description="This program is ideal for families who want structured education with flexibility, allowing students to benefit from classroom interaction while maintaining adaptable learning routines." :objectives="$objectives"  />
 
-    <x-primary-school.why-alhazen-school />
+    <x-why-alhazen-school mt="2xl:mt-20" />
 
     <x-primary-school.school-facilities />
 

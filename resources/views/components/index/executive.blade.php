@@ -11,8 +11,8 @@
                         <!-- Badge -->
                         <div class="mb-5 flex justify-center">
                             <span
-                                class="inline-flex items-center rounded-full border border-primary px-4 py-1.5 text-primary">
-                                <h5 class="text-h5">A Word from Our Executive</h5>
+                                class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
+                                A Word from Our Executive
                             </span>
                         </div>
 

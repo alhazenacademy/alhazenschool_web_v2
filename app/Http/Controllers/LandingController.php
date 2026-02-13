@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
-use App\Models\Tutor;
 use App\Models\Article;
 use App\Models\Program;
 use App\Models\SalesNumber;
@@ -16,109 +15,9 @@ class LandingController extends Controller
 {
     public function index()
     {   
-        // CTA Sales Phone
-        $salesPhone = optional(SalesNumber::active()->inRandomOrder()->first())->phone_number;
+        $salesPhone = "081234567890";
 
-        // Section Tutors
-        $tutors = Tutor::active()->ordered()->get();
-        $cards = $tutors->map(function (Tutor $t) {
-            return [
-                'name' => $t->name,
-                'years' => $t->years,
-                'skills' => is_array($t->skills) ? implode(', ', $t->skills) : (string) $t->skills,
-                'photo' => $t->photo_url,     // accessor di model (fallback male/female jika null)
-                'bg-photo' => $t->bg_color_safe, // accessor di model (default aman k$s['img']alau null)
-                'gender' => $t->gender,        // 'male' | 'female'
-                'bio' => $t->bio,
-            ];
-        })->all();
-
-        // Section Footer
-        $settings = SiteSetting::companySettings();
-        $whatsapp = $settings['whatsapp'] ?? null;
-        $email = $settings['email'] ?? null;
-        $website = $settings['website'] ?? null;
-        $address = $settings['address'] ?? null;
-        $socials = collect($settings['socials'] ?? [])
-            ->where('is_active', true)
-            ->sortBy('sort_order');
-        $programLinks = Program::active()
-            ->ordered()
-            ->get()
-            ->map(function (Program $program) {
-                return [
-                    'label' => $program->name,
-                    'url' => match (strtolower($program->name)) {
-                        'coding', 'coding anak', 'kursus coding' => 'kursus-coding-anak',
-                        'roblox', 'roblox studio' => 'kursus-roblox',
-                        default => 'program',
-                    },      // nama route: route('program', ['tab' => key])
-                    'key' => $program->key,  // dipakai sebagai tab
-                ];
-            })
-            ->all();
-
-        // Section Articles
-        $featured = Article::featureArticle()->first();
-        $latestArticle = Article::published()
-            ->when($featured, fn($q) => $q->where('id', '!=', $featured->id))
-            ->latest('published_at')
-            ->take(4)
-            ->get();
-        
-        // Section FAQ
-        $faqs = Faq::active()->ordered()->get();
-        
-        // Section Program Cards
-        $programCards = Program::query()
-            ->with([
-                'info' => function ($q) {
-                    $q->where('context', 'kids_landing');
-                }
-            ])
-            ->active()   // scopeActive()
-            ->home()     // scopeHome()
-            ->ordered()  // scopeOrdered()
-            ->get()
-            ->map(function (Program $program) {
-                $info = $program->info;
-
-                return [
-                    'bg' => $info->bg_class ?? 'bg-[#E5E7EB]',
-                    'text-color' => $info->text_color_class ?? 'text-[#0F172A]',
-                    'child' => $info
-                        ? $info->child_image_url   // accessor
-                        : asset('assets/kids/program-detail/anak.webp'),
-                    'icon' => $info && $info->icon_path
-                        ? asset($info->icon_path)
-                        : null,
-                    'title' => $info->title ?? $program->name,
-                    'sub' => $info->short_tagline
-                        ?? $info->subtitle
-                        ?? '',
-
-                    // URL berdasarkan nama program
-                    'url' => match (strtolower($program->name)) {
-                        'coding', 'coding anak', 'kursus coding' => 'kursus-coding-anak',
-                        'roblox', 'roblox studio' => 'kursus-roblox',
-                        default => 'program',
-                    },
-                ];
-            })
-            ->values()
-            ->toArray();
-        // Tambah 1 kartu "View All" manual (seperti di hardcoded-mu)
-        $programCards[] = [
-            'bg' => 'bg-[#E5E7EB]',
-            'text-color' => 'text-[#0F172A]',
-            'child' => asset('assets/kids/program-detail/anak.webp'),
-            'icon' => asset('assets/kids/program-detail/icon-program6.png'),
-            'title' => 'View All',
-            'sub' => 'Explore all our courses',
-            'url' => 'program' // ganti sesuai route index
-        ];
-
-        return view('pages.index', compact('salesPhone', 'cards', 'whatsapp', 'email', 'address', 'website', 'socials', 'featured', 'latestArticle', 'faqs', 'programCards', 'programLinks'));
+        return view('pages.index', compact('salesPhone'));
     }
 
     public function program()

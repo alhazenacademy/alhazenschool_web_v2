@@ -279,14 +279,20 @@ export const learningSwiper = new Swiper(".learningSwiper", {
 export const learningProgramSwiper = new Swiper(".learningProgramSwiper", {
     modules: [Navigation, Pagination, A11y],
     grabCursor: true,
-    slidesPerView: 1.75,
+    slidesPerView: 1,
     centeredSlides: false,
     spaceBetween: 24,
     breakpoints: {
         640: {
             slidesPerView: 1.2,
         },
+        768: {
+            slidesPerView: 1.35,
+        },
         1024: {
+            slidesPerView: 1.5,
+        },
+        1280: {
             slidesPerView: 1.75,
         },
     },
@@ -299,20 +305,23 @@ export const primaryProgramObjectiveSwiper = new Swiper(".primary-program-object
 
     breakpoints: {
         640: {
-            slidesPerView: 1.2,
+            slidesPerView: 1,
         },
         768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
         },
         1024: {
-            slidesPerView: 2.5,
+            slidesPerView: 1.5,
         },
         1280: {
+            slidesPerView: 2,
+        },
+        1536: { 
             slidesPerView: 2.5,
         },
-        // 1536: { 
-        //     slidesPerView: 2.5,
-        // },
+        1792: {
+            slidesPerView: 2.5,
+        },
     },
 });
 
@@ -323,20 +332,23 @@ export const primaryEducatorsSwiper = new Swiper(".primary-educators-swiper", {
 
     breakpoints: {
         640: {
-            slidesPerView: 1.2,
+            slidesPerView: 1,
         },
         768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
         },
         1024: {
             slidesPerView: 1.5,
         },
         1280: {
+            slidesPerView: 2,
+        },
+        1536: { 
             slidesPerView: 2.5,
         },
-        // 1536: { 
-        //     slidesPerView: 2.5,
-        // },
+        1792: {
+            slidesPerView: 2.5,
+        },
     },
 });
 
