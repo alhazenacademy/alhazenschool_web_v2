@@ -10,7 +10,7 @@
 
         <!-- Title -->
         <h1 class="text-h1 font-bold italic leading-tight mb-5">
-            Learning Programs Designed for<br class="hidden md:block"> 
+            Learning Programs Designed for <br class="hidden md:block"> 
             Every Student
         </h1>
 

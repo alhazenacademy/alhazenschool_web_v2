@@ -36,7 +36,7 @@
         ],
     ],
 ])
-<section id="program-faq" class="py-12 lg:py-24">
+<section id="faq" class="py-12 lg:py-24">
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Header -->

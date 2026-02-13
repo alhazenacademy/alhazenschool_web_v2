@@ -10,7 +10,7 @@
 
         <!-- Title -->
         <h1 class="text-h1 font-bold italic leading-tight mb-5">
-            A Global Islamic Technology<br class="hidden md:block">
+            A Global Islamic Technology <br class="hidden md:block">
             Hybrid School
         </h1>
 
@@ -21,7 +21,7 @@
         </p>
 
         <!-- Image Wrapper -->
-        <div class="relative max-w-5xl mx-auto flex justify-center">
+        <div class="relative max-w-5xl mx-auto hidden md:flex justify-center">
 
             <!-- Main Image -->
             <img src="{{ asset('assets/kids/about/hero-img.webp') }}" alt="Alhazen Classroom"

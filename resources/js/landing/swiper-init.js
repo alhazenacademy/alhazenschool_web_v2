@@ -291,3 +291,79 @@ export const learningProgramSwiper = new Swiper(".learningProgramSwiper", {
         },
     },
 });
+
+export const primaryProgramObjectiveSwiper = new Swiper(".primary-program-objective-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: false,
+
+    breakpoints: {
+        640: {
+            slidesPerView: 1.2,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 2.5,
+        },
+        1280: {
+            slidesPerView: 2.5,
+        },
+        // 1536: { 
+        //     slidesPerView: 2.5,
+        // },
+    },
+});
+
+export const primaryEducatorsSwiper = new Swiper(".primary-educators-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: false,
+
+    breakpoints: {
+        640: {
+            slidesPerView: 1.2,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 1.5,
+        },
+        1280: {
+            slidesPerView: 2.5,
+        },
+        // 1536: { 
+        //     slidesPerView: 2.5,
+        // },
+    },
+});
+
+export const primaryOurProgramsSwiper = new Swiper(".primary-our-programs-swiper", {
+    modules: [Navigation, Pagination, A11y],
+    grabCursor: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: { nextEl: ".primary-our-programs-next", prevEl: ".primary-our-programs-prev" },
+    on: {
+    },
+});
+
+export const testimoniSwiper = new Swiper(".testimoni-swiper", {
+    modules: [Pagination, A11y],
+    grabCursor: true,
+    loop: true,
+    spaceBetween: 24,
+
+    slidesPerView: 1,
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
+});

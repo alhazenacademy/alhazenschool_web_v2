@@ -1,4 +1,3 @@
-<!-- ===== CTA Trial Class ===== -->
 <section id="cta-trial-class" class="relativepy-12 lg:py-20">
     <div class="max-w-7xl mx-auto px-6 ">
         <div class="rounded-[40px] overflow-hidden bg-no-repeat bg-center bg-cover bg-primary shadow-lg"
