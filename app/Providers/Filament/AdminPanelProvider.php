@@ -2,23 +2,16 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Widgets\OverviewStats;
-use App\Filament\Widgets\RecentArticles;
-use App\Filament\Widgets\TrialOverview;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Enums\ThemeMode;
 use Filament\Pages\Dashboard;
 use Filament\Support\Colors\Color;
-use Filament\Widgets\AccountWidget;
 use App\Filament\Pages\Auth\EditProfile;
-use Filament\Navigation\NavigationGroup;
-use Filament\Widgets\FilamentInfoWidget;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Filament\Http\Middleware\AuthenticateSession;
-use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -46,7 +39,7 @@ class AdminPanelProvider extends PanelProvider
             ->profile(EditProfile::class, isSimple: false)
             ->favicon(asset('assets/logo.webp'))
             ->brandLogo(asset('assets/cms-logo.webp'))
-            ->brandName('Alhazen Academy CMS')
+            ->brandName('Alhazen School CMS')
             ->colors([
                 'primary' => Color::hex('#059669'),
             ])
@@ -57,12 +50,6 @@ class AdminPanelProvider extends PanelProvider
                 Dashboard::class,
             ])
             // ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
-            ->widgets([
-                    // AccountWidget::class,
-                TrialOverview::class,
-                OverviewStats::class,
-                RecentArticles::class,
-            ])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
@@ -74,31 +61,8 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->plugins([
-                FilamentShieldPlugin::make(),
-            ])
             ->authMiddleware([
                 Authenticate::class,
-            ])
-            ->navigationGroups([
-                NavigationGroup::make()
-                    ->label('Dashboard')
-                    ->collapsed(false),
-
-                NavigationGroup::make()
-                    ->label('Trial Class'),
-
-                NavigationGroup::make()
-                    ->label('Academy'),
-
-                NavigationGroup::make()
-                    ->label('Content'),
-
-                NavigationGroup::make()
-                    ->label('Master Data'),
-
-                NavigationGroup::make()
-                    ->label('Filament Shield'),
             ]);
         ;
     }

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\TrialClassController;
@@ -14,6 +13,7 @@ Route::get('/primary-school/guided-self-learning', [LandingController::class, 'p
 Route::get('/admission', [LandingController::class, 'admission'])->name('admission');
 Route::get('/artikel', [LandingController::class, 'article'])->name('artikel');
 Route::get('/category/{slug}', [LandingController::class, 'category'])->name('category.show');
+
 Route::get('/kelasgratis', [TrialClassController::class, 'index'])->name('trial');
 Route::get('/thank-you', [TrialClassController::class, 'thank_you'])->name('trial.thank_you');
 Route::post('/trial', [TrialClassController::class, 'store'])->name('trial.store');
