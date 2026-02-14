@@ -1,6 +1,7 @@
 @props([
     'title' => 'Sesuatu yang menarik akan datang!',
-    'subtitle' => 'Fitur baru segera hadir. Sambil menunggu, kamu bisa kembali ke beranda atau jelajahi halaman lain yang mungkin kamu butuhkan.',
+    'subtitle' =>
+        'Fitur baru segera hadir. Sambil menunggu, kamu bisa kembali ke beranda atau jelajahi halaman lain yang mungkin kamu butuhkan.',
     'buttonText' => 'Kembali ke Home',
     'buttonHref' => route('home', absolute: false),
     // target tanggal rilis (YYYY-MM-DDTHH:MM:SS)
@@ -13,15 +14,17 @@
     class="relative min-h-[70vh] flex flex-col items-center justify-center gap-8 text-center px-4 py-14">
 
     {{-- Headline --}}
-    <div class="max-w-3xl">
-        <span
-            class="inline-block rounded-full px-3 py-1 text-[12px] font-semibold ring-1 ring-[var(--color-neutral)]/70 bg-[var(--color-background)]/80 mb-3">
-            Coming Soon
-        </span>
-        <h1 class="text-h2 font-extrabold text-[var(--color-primary)] leading-tight mb-2">
+    <div class="max-w-7xl">
+        <div class="mb-5">
+            <span
+                class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-text text-text">
+                Coming Soon
+            </span>
+        </div>
+        <h1 class="text-h1 font-bold text-[var(--color-primary)] italic leading-tight mb-2">
             {{ $title }}
         </h1>
-        <p class="text-body text-[var(--color-text)]/85">
+        <p class="text-body text-text">
             {{ $subtitle }}
         </p>
     </div>
@@ -47,13 +50,21 @@
     {{-- Actions --}}
     <div class="flex flex-col sm:flex-row items-center gap-3 mt-2">
         <a href="{{ $buttonHref }}"
-            class="inline-flex items-center gap-2 rounded-2xl px-6 py-3 text-button bg-[var(--color-accent)] text-white hover:opacity-95 hover:scale-[1.02] transition">
-            {{ $buttonText }}
+            class="inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3 text-background font-semibold shadow-lg transition-transform duration-200 hover:scale-105">
+            <span>{{ $buttonText }}</span>
+
+            <!-- Arrow Icon -->
+            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-[#15433B] text-background">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </span>
         </a>
     </div>
 
     {{-- Small note --}}
-    <p class="text-small text-[var(--color-text)]/55">
+    <p class="text-small text-text">
         Estimasi peluncuran: <span class="font-semibold" x-text="etaText"></span>
     </p>
 </section>
