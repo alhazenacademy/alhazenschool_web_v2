@@ -1,5 +1,5 @@
 <x-layout
-    title="429 — Terlalu Banyak Percobaan | Alhazen Academy"
+    title="429 — Terlalu Banyak Percobaan | Alhazen School"
     description="Terlalu banyak permintaan dalam waktu singkat."
     wa-message="Halo, saya mendapatkan error 429 di Alhazen."
     :sales-phone="$salesPhone ?? null"

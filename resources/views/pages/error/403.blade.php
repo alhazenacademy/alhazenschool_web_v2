@@ -1,5 +1,5 @@
 <x-layout
-    title="403 — Akses Ditolak | Alhazen Academy"
+    title="403 — Akses Ditolak | Alhazen School"
     description="Kamu tidak memiliki hak akses ke halaman ini."
     wa-message="Halo, saya mendapatkan error 403 di Alhazen."
     :sales-phone="$salesPhone ?? null"

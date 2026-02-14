@@ -1,5 +1,5 @@
 <x-layout
-    title="404 — Halaman Tidak Ditemukan | Alhazen Academy"
+    title="404 — Halaman Tidak Ditemukan | Alhazen School"
     description="Halaman yang kamu cari tidak ditemukan."
     wa-message="Halo, saya menemukan halaman 404 di Alhazen."
     :sales-phone="$salesPhone ?? null"

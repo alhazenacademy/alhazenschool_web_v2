@@ -7,7 +7,7 @@
                 'Designed for elementary learners, this program focuses on foundational literacy, numeracy, Islamic values, and early exposure to technology through guided hybrid learning.',
             'image' => asset('assets/kids/index-program/primary.webp'),
             'status' => 'active',
-            'link' => '#',
+            'link' => route('full-online-group-learning'),
         ],
         [
             'title' => 'Junior High School <br>Program',
@@ -77,7 +77,7 @@
 
                         {{-- Button --}}
                         @if ($program['status'] === 'active')
-                            <a href="#"
+                            <a href="{{ $program['link'] }}"
                                 class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-background font-semibold shadow-lg transition-transform duration-200 hover:scale-105 w-fit mx-auto">
                                 <span>Learn More</span>
 

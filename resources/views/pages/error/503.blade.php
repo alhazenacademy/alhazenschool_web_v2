@@ -1,5 +1,5 @@
 <x-layout
-    title="503 — Sedang Perawatan | Alhazen Academy"
+    title="503 — Sedang Perawatan | Alhazen School"
     description="Sistem sedang dalam perbaikan."
     wa-message="Halo, saya melihat pesan maintenance (503) di Alhazen."
     :sales-phone="$salesPhone ?? null"

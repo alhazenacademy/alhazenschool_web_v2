@@ -1,4 +1,6 @@
 @php
+    $link_trial = 'https://apps.alhazenschool.sch.id/#/trial';
+
     $heroCards = [
         [
             'title' => 'For Students & Parents',
@@ -6,7 +8,7 @@
                 'Alhazen School is a Global Islamic Technology Hybrid School that integrates Islamic values, academic excellence, and digital skills.',
             'image' => asset('assets/kids/index-hero/hero1.webp'),
             'bg' => 'additional-blue',
-            'link' => '#',
+            // 'link' => '#',
         ],
         [
             'title' => 'For Educators & Partners',
@@ -14,7 +16,7 @@
                 'We collaborate with educators and institutions to build technology-driven and Islamic-based learning systems.',
             'image' => asset('assets/kids/index-hero/hero2.webp'),
             'bg' => 'additional-orange',
-            'link' => '#',
+            // 'link' => '#',
         ],
         [
             'title' => 'For Learning Programs',
@@ -22,7 +24,7 @@
                 'Alhazen School offers structured learning programs that combine Islamic character building with technology and innovation.',
             'image' => asset('assets/kids/index-hero/hero3.webp'),
             'bg' => 'additional-purple',
-            'link' => '#',
+            // 'link' => '#',
         ],
     ];
 @endphp
@@ -60,7 +62,7 @@
                     Salaf.
                 </p>
 
-                <a href="#"
+                <a href="{{ $link_trial }}"
                     class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-white font-semibold shadow-lg transition-transform duration-200 hover:scale-105">
                     <span>Try a Free Class</span>
 
@@ -85,14 +87,14 @@
     </div>
 
 
-    <div class=" relative mt-12 lg:absolute lg:top-0 lg:right-0 lg:w-[500px] xl:w-[680px] 2xl:w-[768px] lg:mt-0 lg:pt-10 px-5 lg:px-0 flex items-start">
+    <div class=" relative mt-12 lg:absolute lg:top-0 lg:right-0 lg:w-[500px] xl:w-[680px] 2xl:w-[768px] lg:mt-0 lg:pt-20 px-5 lg:px-0 flex items-start">
         <div class="w-full overflow-hidden lg:pl-10">
             <div class="swiper heroCardSwiper cursor-grab">
                 <div class="swiper-wrapper">
                     @foreach ($heroCards as $card)
                         <div class="swiper-slide w-[500px] shrink-0">
                             <div
-                                class="{{ $card['bg'] }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col min-h-[600px]">
+                                class="{{ $card['bg'] }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col min-h-[500px]">
                                 <div class="h-[300px] rounded-2xl overflow-hidden mb-6 shrink-0">
                                     <img src="{{ $card['image'] }}" alt="{{ $card['title'] }}"
                                         class="w-full h-full object-cover brightness-70">
@@ -106,12 +108,12 @@
                                             {{ $card['desc'] }}
                                         </p>
                                     </div>
-                                    <div class="pt-4">
+                                    {{-- <div class="pt-4">
                                         <a href="{{ $card['link'] }}"
                                             class="inline-block px-6 py-2 rounded-full bg-[#0F172A] text-white text-sm font-medium hover:bg-[#020617] transition">
                                             Learn More
                                         </a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

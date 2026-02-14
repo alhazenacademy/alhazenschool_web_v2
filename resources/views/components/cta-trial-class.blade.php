@@ -1,3 +1,7 @@
+@props([
+    'link_trial' => 'https://apps.alhazenschool.sch.id/#/trial',
+])
+
 <section id="cta-trial-class" class="relativepy-12 lg:py-20">
     <div class="max-w-7xl mx-auto px-6 ">
         <div class="rounded-[40px] overflow-hidden bg-no-repeat bg-center bg-cover bg-primary shadow-lg"
@@ -13,7 +17,7 @@
                     child’s growth and confidence.
                 </p>
     
-                <a href="#"
+                <a href="{{ $link_trial }}"
                     class="inline-flex items-center gap-3 rounded-full bg-background px-6 py-3 text-primary font-semibold shadow-lg transition-transform duration-200 hover:scale-105">
                     <span>Try a Free Class</span>
     
