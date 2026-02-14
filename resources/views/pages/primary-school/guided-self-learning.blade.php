@@ -1,4 +1,4 @@
-<x-layout title="Title - Primary School - Guided Self Learning" description="Description - Primary School - Guided Self Learning" wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi / Daftar Kelas di Alhazen Academy." :sales-phone="$salesPhone">
+<x-layout title="Title - Primary School - Guided Self Learning" description="Description - Primary School - Guided Self Learning" wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi / Daftar Kelas di Alhazen School." :sales-phone="$salesPhone">
     <x-navbar variant="kids" />
 
     <x-primary-school.hero badge="Independent Learning" title='Guided Islamic Self Learning <br class="hidden md:block">Program' description="Our self-learning program empowers students to learn independently through structured modules, guided supervision, and Islamic values—supported by teachers and active parental involvement." image="{{ asset('assets/kids/primary-school/guided-self-learning/hero-img.webp') }}" imageAlt="Guided Self Learning Image" floatingCardsText="Building independence with structured guidance and goals." />

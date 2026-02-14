@@ -20,6 +20,9 @@
         ? 'font-bold text-[var(--color-text)]/100'
         : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100') .
         ' whitespace-nowrap pb-1 transition-all duration-200 ease-in-out';
+
+    $link_login = "https://apps.alhazenschool.sch.id/#/index";
+    $link_enrollment = "https://apps.alhazenschool.sch.id/#/register"
 @endphp
 
 <header class="sticky top-0 z-40 bg-background/90 backdrop-blur">
@@ -72,7 +75,7 @@
             </ul>
 
             <div class="flex items-center gap-4 my-5">
-                <a href="#"
+                <a href="{{ $link_login }}"
                 class="px-6 py-3 rounded-full text-button-large font-semibold
                     border-2 border-[var(--color-primary)]
                     text-[var(--color-primary)]
@@ -83,7 +86,7 @@
                     Login
                 </a>
 
-                <a href="#" 
+                <a href="{{ $link_enrollment }}" 
                 class="px-6 py-3 rounded-full text-button-large font-semibold text-white
                     bg-[var(--color-primary)]
                     shadow-sm
@@ -148,7 +151,7 @@
 
                     {{-- Mobile: Login --}}
                     <li class="px-4 pt-3 mb-3">
-                        <a href="#"
+                        <a href="{{ $link_login }}"
                         class="w-full px-6 py-3 rounded-full text-sm font-semibold
                                 border-2 border-[var(--color-primary)]
                                 text-[var(--color-primary)]
@@ -164,7 +167,7 @@
 
                     {{-- Mobile: Enrollment --}}
                     <li class="px-4 pb-4">
-                        <a href="#"
+                        <a href="{{ $link_enrollment }}"
                         class="w-full px-6 py-3 rounded-full text-sm font-semibold text-white
                                 bg-[var(--color-primary)]
                                 shadow-sm

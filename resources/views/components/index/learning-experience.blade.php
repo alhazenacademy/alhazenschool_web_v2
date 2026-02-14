@@ -3,8 +3,23 @@
         [
             'title' => 'Integrated Curriculum',
             'desc' =>
-                'Alhazen School implements an integrated curriculum consisting of four main curricula: national, national plus, Islamic, and technology. The four combinations of these curricula combine smoothly to produce the finest possible future generations.',
+                'Alhazen School implements an integrated curriculum that brings together national, national plus, Islamic, and technology-based learning. These four curricula are seamlessly combined to nurture well-rounded students with strong academic foundations, moral values, and future-ready skills.',
             'image' => asset('assets/kids/index-learning/integrated-curriculum.webp'),
+            'link' => route('about') . '#about-integrated-curriculum',
+        ],
+        [
+            'title' => 'A Structured and Flexible Way to Learn',
+            'desc' =>
+                'Learning at Alhazen School follows a well-structured yet flexible system that adapts to students’ developmental stages and learning needs. Through a balanced blend of guided instruction, independent exploration, and interactive activities, students are encouraged to grow confidently and responsibly.',
+            'image' => asset('assets/kids/index-learning/flexible-way-to-learn.webp'),
+            'link' => route('about') . '#about-learning-system',
+        ],
+        [
+            'title' => 'Measuring Student Progress Holistically',
+            'desc' =>
+                'Student progress at Alhazen School is measured holistically, taking into account academic achievement, character development, spiritual growth, and social skills. This comprehensive assessment approach ensures that every child’s strengths, challenges, and potential are recognized and supported.',
+            'image' => asset('assets/kids/index-learning/measuring-student-progres.webp'),
+            'link' => route('about') . '#about-assesment',
         ],
     ];
 @endphp
@@ -22,8 +37,7 @@
                     Our Learning Experience
                 </span>
 
-                <h2
-                    class="font-bold italic leading-tight mb-4 text-2xl sm:text-3xl lg:text-h2">
+                <h2 class="font-bold italic leading-tight mb-4 text-2xl sm:text-3xl lg:text-h2">
                     What It’s Like to Learn at Alhazen School
                 </h2>
 
@@ -52,7 +66,7 @@
 
                                     <!-- Text -->
                                     <div class="text-center lg:text-left order-2 lg:order-1">
-                                        <h3 class="text-h3 font-bold italic mb-5 text"> 
+                                        <h3 class="text-h3 font-bold italic mb-5 text">
                                             {{ $slide['title'] }}
                                         </h3>
 
@@ -60,7 +74,7 @@
                                             {{ $slide['desc'] }}
                                         </p>
 
-                                        <a href="#"
+                                        <a href="{{ $slide['link'] }}"
                                             class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-background font-semibold shadow-lg transition-transform duration-200 hover:scale-105">
                                             <span>Learn More</span>
 

@@ -1,6 +1,6 @@
 <x-layout
-    title="500 — Terjadi Kesalahan | Alhazen Academy"
-    description="Terjadi kesalahan di server Alhazen Academy."
+    title="500 — Terjadi Kesalahan | Alhazen School"
+    description="Terjadi kesalahan di server Alhazen School."
     wa-message="Halo, sepertinya ada error 500 di Alhazen."
     :sales-phone="$salesPhone ?? null"
 >

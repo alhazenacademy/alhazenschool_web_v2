@@ -66,10 +66,10 @@
                     <h6 class="text-h6 font-bold mb-5">Alhazen School</h6>
                     <ul class="text-small space-y-5">
                         <li>
-                            <a href="#" class="hover:font-bold">About Us</a>
+                            <a href="{{ route('about') }}" class="hover:font-bold">About Us</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:font-bold">Our Teams</a>
+                            <a href="{{ route('admission') }}" class="hover:font-bold">Admission</a>
                         </li>
                     </ul>
                 </div>
@@ -78,13 +78,13 @@
                     <h6 class="text-h6 font-bold mb-5">More Information</h6>
                     <ul class="text-small space-y-5">
                         <li>
-                            <a href="#" class="hover:font-bold">School Program</a>
+                            <a href="{{ route('program') }}" class="hover:font-bold">School Program</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:font-bold">School & Curriculum</a>
+                            <a href="{{ route('program') }}" class="hover:font-bold">School & Curriculum</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:font-bold">Tuition Fee</a>
+                            <a href="{{ route('program') }}" class="hover:font-bold">Tuition Fee</a>
                         </li>
                     </ul>
                 </div>

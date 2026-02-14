@@ -1,4 +1,4 @@
-<x-layout title="Title - Program" description="Description - Program" wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi / Daftar Kelas di Alhazen Academy." :sales-phone="$salesPhone">
+<x-layout title="Title - Program" description="Description - Program" wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi / Daftar Kelas di Alhazen School." :sales-phone="$salesPhone">
     <x-navbar variant="kids" />
 
     <x-program.hero />

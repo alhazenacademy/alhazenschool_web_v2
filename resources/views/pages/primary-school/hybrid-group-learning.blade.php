@@ -1,4 +1,4 @@
-<x-layout title="Title - Primary School - Hybrid Group Learning" description="Description - Primary School - Hybrid Group Learning" wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi / Daftar Kelas di Alhazen Academy." :sales-phone="$salesPhone">
+<x-layout title="Title - Primary School - Hybrid Group Learning" description="Description - Primary School - Hybrid Group Learning" wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi / Daftar Kelas di Alhazen School." :sales-phone="$salesPhone">
     <x-navbar variant="kids" />
 
     <x-primary-school.hero badge="Hybrid Learning" title='Balanced Islamic Hybrid Group <br class="hidden md:block">Education' description="Our hybrid group program combines online learning with face-to-face sessions, offering a balanced educational experience that supports academic growth, social development, and Islamic character building." image="{{ asset('assets/kids/primary-school/hybrid-group-learning/hero-img.webp') }}" imageAlt="Hybrid Group Learning Image" floatingCardsText="Combining flexibility and structure for meaningful learning." />

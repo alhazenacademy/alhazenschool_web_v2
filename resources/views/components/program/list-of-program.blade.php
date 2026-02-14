@@ -23,6 +23,7 @@
                     'text' => 'By Request',
                 ],
             ],
+            'message' => 'Halo Tim Alhazen School, saya ingin menanyakan informasi lebih lanjut mengenai program Full Online Group Learning (sistem pembelajaran online, jadwal kelas, biaya, dan pendaftaran). Terima kasih.'
         ],
         [
             'border' => 'border-aditional-orange',
@@ -50,6 +51,7 @@
                     'text' => 'By Request',
                 ],
             ],
+            'message' => 'Halo Tim Alhazen School, saya ingin menanyakan informasi lebih lanjut mengenai program Hybrid Group Learning (kombinasi kelas online & tatap muka, jadwal belajar, biaya, dan pendaftaran). Terima kasih.'
         ],
         [
             'border' => 'border-aditional-purple',
@@ -72,8 +74,12 @@
                     'text' => 'By Request',
                 ],
             ],
+            'message' => 'Halo Tim Alhazen School, saya ingin menanyakan informasi lebih lanjut mengenai program Guided Self Learning (pembelajaran mandiri dengan pendampingan, sistem belajar, biaya, dan pendaftaran). Terima kasih.'
         ],
     ],
+
+    'sales_phone' => '082110004351',
+
 ])
 
 <section id="program-list-of-program" class="relative py-12 lg:py-20">
@@ -165,8 +171,11 @@
                         </h4>
                     @endforeach
 
+                    @php
+                        $link_contact_us = 'https://wa.me/' . $sales_phone . '?text=' . urlencode($program['message']);
+                    @endphp
                     <div class="mx-auto mt-10">
-                        <a href="#"
+                        <a href="{{ $link_contact_us }}"
                             class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-background font-semibold shadow-lg transition-transform duration-200 hover:scale-105">
                             <span>Contact Us</span>
 

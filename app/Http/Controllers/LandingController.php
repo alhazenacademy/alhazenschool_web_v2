@@ -15,21 +15,21 @@ class LandingController extends Controller
 {
     public function index()
     {   
-        $salesPhone = "081234567890";
+        $salesPhone = "082110004351";
 
         return view('pages.index', compact('salesPhone'));
     }
 
     public function program()
     {
-        $salesPhone = "081234567890";
+        $salesPhone = "082110004351";
 
         return view('pages.program', compact('salesPhone'));
     }
 
     public function about()
     {   
-        $salesPhone = "081234567890";
+        $salesPhone = "082110004351";
 
         return view('pages.about', compact('salesPhone'));
     }
@@ -261,28 +261,28 @@ class LandingController extends Controller
 
     public function admission()
     {   
-        $salesPhone = "081234567890";
+        $salesPhone = "082110004351";
 
         return view('pages.admission', compact('salesPhone'));
     }
 
     public function primary_school_full_online_group()
     {   
-        $salesPhone = "081234567890";
+        $salesPhone = "082110004351";
 
         return view('pages.primary-school.full-online-group-learning', compact('salesPhone'));
     }
 
     public function primary_school_hybrid_group()
     {   
-        $salesPhone = "081234567890";
+        $salesPhone = "082110004351";
 
         return view('pages.primary-school.hybrid-group-learning', compact('salesPhone'));
     }
 
     public function primary_school_guided_self()
     {   
-        $salesPhone = "081234567890";
+        $salesPhone = "082110004351";
 
         return view('pages.primary-school.guided-self-learning', compact('salesPhone'));
     }

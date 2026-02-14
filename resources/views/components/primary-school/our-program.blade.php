@@ -6,6 +6,7 @@
                 'A structured online group learning program designed to support students through interactive virtual classes while maintaining academic quality and Islamic values.',
             'list' => ['Group-based online learning sessions', 'Interactive discussions and guided instruction'],
             'image' => asset('assets/kids/primary-school/our-programs-img-1.webp'),
+            'route' => route('full-online-group-learning'),
         ],
         [
             'title' => 'Hybrid Group Learning',
@@ -13,6 +14,7 @@
                 'A balanced learning program that combines face-to-face sessions and online classes to support academic growth, social interaction, and learning flexibility.',
             'list' => ['Combination of offline and online learning method', 'Scheduled face-to-face classes with teachers'],
             'image' => asset('assets/kids/primary-school/our-programs-img-2.webp'),
+            'route' => route('hybrid-group-learning'),
         ],
         [
             'title' => 'Guided Self Learning',
@@ -20,6 +22,7 @@
                 'An independent learning program supported by structured guidance, digital resources, and regular evaluations to build responsibility and learning confidence.',
             'list' => ['Parent-guided learning with structured syllabus', 'Access to learning modules and digital resources'],
             'image' => asset('assets/kids/primary-school/our-programs-img-3.webp'),
+            'route' => route('guided-self-learning'),
         ],
     ];
 @endphp
@@ -87,7 +90,7 @@
                                             @endforeach
                                         </ul>
 
-                                        <a href="#"
+                                        <a href="{{ $slide['route'] }}"
                                             class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-background font-semibold shadow-lg transition-transform duration-200 hover:scale-105">
                                             <span>Learn More</span>
 

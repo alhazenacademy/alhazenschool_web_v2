@@ -1,5 +1,5 @@
 <x-layout
-    title="419 — Sesi Berakhir | Alhazen Academy"
+    title="419 — Sesi Berakhir | Alhazen School"
     description="Sesi halaman sudah kedaluwarsa."
     wa-message="Halo, saya mendapatkan error 419 di Alhazen."
     :sales-phone="$salesPhone ?? null"
