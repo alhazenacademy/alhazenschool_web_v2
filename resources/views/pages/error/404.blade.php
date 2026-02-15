@@ -1,17 +1,17 @@
 <x-layout
-    title="404 — Halaman Tidak Ditemukan | Alhazen School"
-    description="Halaman yang kamu cari tidak ditemukan."
-    wa-message="Halo, saya menemukan halaman 404 di Alhazen."
+    title="404 — Page Not Found | Alhazen School"
+    description="The page you are looking for was not found."
+    wa-message="Hi, I found a 404 page on Alhazen School Web."
     :sales-phone="$salesPhone ?? null"
 >
     <x-error.error-page
         code="404"
-        title="Ups! Halaman tidak ditemukan."
-        subtitle="Tautan yang kamu buka tidak tersedia atau sudah dipindahkan."
-        buttonText="Kembali ke Home"
+        title="Oops! Page not found."
+        subtitle="The link you are opening is not available or has been moved."
+        buttonText="Back to Home"
         :buttonHref="route('home', absolute: false)"
         :image="asset('assets/kids/error/img-404.webp')"
         imageAlt="404 Not Found"
-        note="Periksa kembali URL untuk memastikan tidak ada kesalahan pengetikan."
+        note="Double check the URL to make sure there are no typos."
     />
 </x-layout>

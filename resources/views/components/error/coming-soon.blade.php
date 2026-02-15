@@ -1,8 +1,7 @@
 @props([
-    'title' => 'Sesuatu yang menarik akan datang!',
-    'subtitle' =>
-        'Fitur baru segera hadir. Sambil menunggu, kamu bisa kembali ke beranda atau jelajahi halaman lain yang mungkin kamu butuhkan.',
-    'buttonText' => 'Kembali ke Home',
+    'title' => 'Something exciting is coming!',
+    'subtitle' => 'New features are coming soon. While you wait, you can return to the homepage or explore other pages you might need.',
+    'buttonText' => 'Back to Home',
     'buttonHref' => route('home', absolute: false),
     // target tanggal rilis (YYYY-MM-DDTHH:MM:SS)
     'launchAt' => '2024-12-31T00:00:00',
@@ -65,7 +64,7 @@
 
     {{-- Small note --}}
     <p class="text-small text-text">
-        Estimasi peluncuran: <span class="font-semibold" x-text="etaText"></span>
+        Estimated launch: <span class="font-semibold" x-text="etaText"></span>
     </p>
 </section>
 
