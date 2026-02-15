@@ -8,7 +8,7 @@
             'category' => 'Theme',
             'author' => 'Jhon Doe',
             'date' => 'Jan 7, 2026',
-            'avatar' => asset('assets/profile.png'),
+            'avatar' => asset('assets/kids/profile.png'),
         ],
         [
             'title' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -18,7 +18,7 @@
             'category' => 'Theme',
             'author' => 'Jhon Doe',
             'date' => 'Jan 7, 2026',
-            'avatar' => asset('assets/profile.png'),
+            'avatar' => asset('assets/kids/profile.png'),
         ],
     ];
 
@@ -29,7 +29,7 @@
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.',
             'author' => 'Lorem Admin',
             'date' => '22 Dec 2025',
-            'avatar' => asset('assets/profile.png'),
+            'avatar' => asset('assets/kids/profile.png'),
         ],
         [
             'title' => 'Lorem Ipsum',
@@ -37,7 +37,7 @@
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.',
             'author' => 'Lorem Admin',
             'date' => '22 Dec 2025',
-            'avatar' => asset('assets/profile.png'),
+            'avatar' => asset('assets/kids/profile.png'),
         ],
         [
             'title' => 'Lorem Ipsum',
@@ -45,7 +45,7 @@
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.',
             'author' => 'Lorem Admin',
             'date' => '22 Dec 2025',
-            'avatar' => asset('assets/profile.png'),
+            'avatar' => asset('assets/kids/profile.png'),
         ],
     ];
 @endphp

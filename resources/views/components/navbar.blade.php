@@ -6,7 +6,7 @@
         ['route' => 'about', 'label' => 'About'],
         ['route' => 'program', 'label' => 'Program'],
         ['route' => 'admission', 'label' => 'Admission'],
-        ['route' => 'coming-soon', 'label' => 'Blog'],
+        ['route' => 'blog', 'label' => 'Blog'],
     ];
 
     // Dropdown "Primary School"

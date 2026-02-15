@@ -85,7 +85,7 @@
         <a href="{{ $waHref }}" target="_blank" rel="noopener noreferrer" x-data="{ show: false }"
             x-init="window.addEventListener('scroll', () => { show = window.scrollY > 300 })" x-show="show"
             class="fixed z-40 bottom-18 right-5 sm:bottom-22 w-14 h-14 rounded-full shadow-lg shadow-black/20 bg-[#25D366] flex items-center justify-center hover:scale-[1.05] hover:shadow-xl active:scale-95 transition">
-            <img src="{{ asset('assets/kids/icon-wa-white.png') }}" alt="WhatsApp icon" class="w-7 h-7">
+            <img src="{{ asset('assets/icon-wa-white.png') }}" alt="WhatsApp icon" class="w-7 h-7">
         </a>
     @endif
 

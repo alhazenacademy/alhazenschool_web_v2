@@ -287,4 +287,11 @@ class LandingController extends Controller
         return view('pages.primary-school.guided-self-learning', compact('salesPhone'));
     }
 
+    public function blog()
+    {   
+        $salesPhone = "082110004351";
+
+        return view('pages.blog', compact('salesPhone'));
+    }
+
 }

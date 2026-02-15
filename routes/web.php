@@ -11,6 +11,7 @@ Route::get('/primary-school/full-online-group-learning', [LandingController::cla
 Route::get('/primary-school/hybrid-group-learning', [LandingController::class, 'primary_school_hybrid_group'])->name('hybrid-group-learning');
 Route::get('/primary-school/guided-self-learning', [LandingController::class, 'primary_school_guided_self'])->name('guided-self-learning');
 Route::get('/admission', [LandingController::class, 'admission'])->name('admission');
+Route::get('/blog', [LandingController::class, 'blog'])->name('blog');
 Route::get('/artikel', [LandingController::class, 'article'])->name('artikel');
 Route::get('/category/{slug}', [LandingController::class, 'category'])->name('category.show');
 
