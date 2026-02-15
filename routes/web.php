@@ -12,8 +12,9 @@ Route::get('/primary-school/hybrid-group-learning', [LandingController::class, '
 Route::get('/primary-school/guided-self-learning', [LandingController::class, 'primary_school_guided_self'])->name('guided-self-learning');
 Route::get('/admission', [LandingController::class, 'admission'])->name('admission');
 Route::get('/blog', [LandingController::class, 'blog'])->name('blog');
-Route::get('/artikel', [LandingController::class, 'article'])->name('artikel');
-Route::get('/category/{slug}', [LandingController::class, 'category'])->name('category.show');
+Route::get('/blog/show', [LandingController::class, 'blogShow'])->name('blogShow');
+// Route::get('/artikel', [LandingController::class, 'article'])->name('artikel');
+// Route::get('/category/{slug}', [LandingController::class, 'category'])->name('category.show');
 
 Route::get('/kelasgratis', [TrialClassController::class, 'index'])->name('trial');
 Route::get('/thank-you', [TrialClassController::class, 'thank_you'])->name('trial.thank_you');
@@ -26,4 +27,4 @@ Route::view('/coming-soon', 'coming_soon')->name('coming-soon');
 Route::get('/_preview/email/trial', [TrialClassController::class, 'testTrialToEmail']);
 
 // wildcard
-Route::get('/{slug}', [LandingController::class, 'articleShow'])->name('artikel.show');
+// Route::get('/{slug}', [LandingController::class, 'articleShow'])->name('artikel.show');

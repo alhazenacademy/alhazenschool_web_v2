@@ -294,4 +294,11 @@ class LandingController extends Controller
         return view('pages.blog', compact('salesPhone'));
     }
 
+    public function blogShow()
+    {   
+        $salesPhone = "082110004351";
+
+        return view('pages.blog.show', compact('salesPhone'));
+    }
+
 }

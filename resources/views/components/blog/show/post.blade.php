@@ -1,6 +1,6 @@
 @props([
-    'authorAvatar' => $article->author->avatar_url ?? asset('assets/kids/artikel/icon-penulis.png'),
-    'backHref' => route('artikel', absolute: false),
+    'authorAvatar' => $article->author->avatar_url ?? asset('assets/kids/profile.png'),
+    'backHref' => route('blog', absolute: false),
     'article' => $article,
 ])
 @php
@@ -23,13 +23,13 @@
         <div class="pt-8">
             <a href="{{ $backHref }}"
                 class="text-small text-text/70 hover:text-[var(--color-primary)] underline underline-offset-2">
-                ← Kembali ke Artikel
+                ← Back to Article
             </a>
         </div>
 
         {{-- Header --}}
         <header class="mt-6 mb-5">
-            <h1 class="text-h2 md:text-h1 font-extrabold">{{ $article->title }}</h1>
+            <h1 class="text-h1 md:text-h1 font-extrabold">{{ $article->title }}</h1>
             <div class="mt-4 flex flex-wrap items-center gap-3 text-small text-text/70">
                 <img src="{{ $authorAvatar }}" alt="Profil penulis {{ $article->author->name }}" class="size-9 object-cover"
                     loading="lazy" decoding="async">
@@ -38,7 +38,7 @@
                     <span>• {{ $article->published_at_formatted }}</span>
                 @endif
                 @if ($article->reading_time)
-                    <span>• {{ $article->reading_time }} menit baca</span>
+                    <span>• {{ $article->reading_time }} minutes read</span>
                 @endif
             </div>
         </header>
@@ -56,7 +56,7 @@
                 target="_blank" rel="noopener"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ring-1 ring-white/10 hover:ring-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 aria-label="Twitter">
-                    <img src="{{ asset('assets/kids/icon-twitter.png') }}" alt="Twitter icon"
+                    <img src="{{ asset('assets/kids/blog/show/icon-x.pngg') }}" alt="Twitter icon"
                         class="w-8 h-auto object-contain select-none transition-transform duration-200 will-change-transform hover:scale-[1.05]"
                         loading="lazy" decoding="async" />
                 </a> --}}
@@ -66,7 +66,7 @@
                 target="_blank" rel="noopener"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ring-1 ring-white/10 hover:ring-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 aria-label="Facebook">
-                    <img src="{{ asset('assets/kids/index-footer/icon-fb.png') }}" alt="Facebook icon"
+                    <img src="{{ asset('assets/kids/blog/show/icon-fb.png') }}" alt="Facebook icon"
                         class="w-8 h-auto object-contain select-none transition-transform duration-200 will-change-transform hover:scale-[1.05]"
                         loading="lazy" decoding="async" />
                 </a>
@@ -76,7 +76,7 @@
                 target="_blank" rel="noopener"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ring-1 ring-white/10 hover:ring-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 aria-label="LinkedIn">
-                    <img src="{{ asset('assets/kids/index-footer/icon-lkn.png') }}" alt="LinkedIn icon"
+                    <img src="{{ asset('assets/kids/blog/show/icon-lkn.png') }}" alt="LinkedIn icon"
                         class="w-8 h-auto object-contain select-none transition-transform duration-200 will-change-transform hover:scale-[1.05]"
                         loading="lazy" decoding="async" />
                 </a>
@@ -86,7 +86,7 @@
                 target="_blank" rel="noopener"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ring-1 ring-white/10 hover:ring-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 aria-label="Whatsapp">
-                    <img src="{{ asset('assets/kids/icon-wa-green.png') }}" alt="Whatsapp icon"
+                    <img src="{{ asset('assets/kids/blog/show/icon-wa.png') }}" alt="Whatsapp icon"
                         class="w-8 h-auto object-contain select-none transition-transform duration-200 will-change-transform hover:scale-[1.05]"
                         loading="lazy" decoding="async" />
                 </a>
@@ -110,7 +110,7 @@
                 target="_blank" rel="noopener"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ring-1 ring-white/10 hover:ring-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 aria-label="Twitter">
-                    <img src="{{ asset('assets/kids/icon-twitter.png') }}" alt="Twitter icon"
+                    <img src="{{ asset('assets/kids/blog/show/icon-x.png') }}" alt="Twitter icon"
                         class="w-8 h-auto object-contain select-none transition-transform duration-200 will-change-transform hover:scale-[1.05]"
                         loading="lazy" decoding="async" />
                 </a> --}}
@@ -120,7 +120,7 @@
                 target="_blank" rel="noopener"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ring-1 ring-white/10 hover:ring-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 aria-label="Facebook">
-                    <img src="{{ asset('assets/kids/index-footer/icon-fb.png') }}" alt="Facebook icon"
+                    <img src="{{ asset('assets/kids/blog/show/icon-fb.png') }}" alt="Facebook icon"
                         class="w-8 h-auto object-contain select-none transition-transform duration-200 will-change-transform hover:scale-[1.05]"
                         loading="lazy" decoding="async" />
                 </a>
@@ -130,7 +130,7 @@
                 target="_blank" rel="noopener"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ring-1 ring-white/10 hover:ring-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 aria-label="LinkedIn">
-                    <img src="{{ asset('assets/kids/index-footer/icon-lkn.png') }}" alt="LinkedIn icon"
+                    <img src="{{ asset('assets/kids/blog/show/icon-lkn.png') }}" alt="LinkedIn icon"
                         class="w-8 h-auto object-contain select-none transition-transform duration-200 will-change-transform hover:scale-[1.05]"
                         loading="lazy" decoding="async" />
                 </a>
@@ -140,7 +140,7 @@
                 target="_blank" rel="noopener"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ring-1 ring-white/10 hover:ring-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 aria-label="Whatsapp">
-                    <img src="{{ asset('assets/kids/icon-wa-green.png') }}" alt="Whatsapp icon"
+                    <img src="{{ asset('assets/kids/blog/show/icon-wa.png') }}" alt="Whatsapp icon"
                         class="w-8 h-auto object-contain select-none transition-transform duration-200 will-change-transform hover:scale-[1.05]"
                         loading="lazy" decoding="async" />
                 </a>

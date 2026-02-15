@@ -136,7 +136,7 @@
             <div>
                 <div id="featured-section" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     @foreach ($articles as $article)
-                        <a href="#"
+                        <a href="{{ route('blogShow') }}"
                             class="relative block rounded-2xl overflow-hidden group transition-all duration-300">
 
                             <img src="{{ asset($article['image']) }}"
