@@ -1034,3 +1034,15 @@
     display: flex;
 }
 /* End Index Our School Program */
+
+/* Admission */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li::before {
+    content: "✔";
+    margin-right: 8px;
+}
+/* End Admission */
