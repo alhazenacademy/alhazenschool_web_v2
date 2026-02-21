@@ -16,15 +16,15 @@ Route::get('/blog/show', [LandingController::class, 'blogShow'])->name('blogShow
 // Route::get('/artikel', [LandingController::class, 'article'])->name('artikel');
 // Route::get('/category/{slug}', [LandingController::class, 'category'])->name('category.show');
 
-Route::get('/kelasgratis', [TrialClassController::class, 'index'])->name('trial');
-Route::get('/thank-you', [TrialClassController::class, 'thank_you'])->name('trial.thank_you');
-Route::post('/trial', [TrialClassController::class, 'store'])->name('trial.store');
-Route::post('/leads', [TrialClassController::class, 'storeLead'])->name('leads.store');
+// Route::get('/kelasgratis', [TrialClassController::class, 'index'])->name('trial');
+// Route::get('/thank-you', [TrialClassController::class, 'thank_you'])->name('trial.thank_you');
+// Route::post('/trial', [TrialClassController::class, 'store'])->name('trial.store');
+// Route::post('/leads', [TrialClassController::class, 'storeLead'])->name('leads.store');
 
 Route::view('/coming-soon', 'coming_soon')->name('coming-soon');
 
 /** PREVIEW: dummy data (tanpa kirim) — buka http://localhost:8000/_preview/email/trial */
-Route::get('/_preview/email/trial', [TrialClassController::class, 'testTrialToEmail']);
+// Route::get('/_preview/email/trial', [TrialClassController::class, 'testTrialToEmail']);
 
 // wildcard
 // Route::get('/{slug}', [LandingController::class, 'articleShow'])->name('artikel.show');
