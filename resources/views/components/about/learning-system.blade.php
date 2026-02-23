@@ -156,7 +156,7 @@
             </div>
 
             <!-- Text -->
-            <div class="mr-20">
+            <div class="lg:mr-20">
                 <h3 class="text-h3 font-bold italic leading-tight mb-5">
                     Hybrid Learning System
                 </h3>
