@@ -95,7 +95,7 @@
                         <li class="flex gap-2 flex-row items-center">
                             <img src="{{ asset('assets/kids/footer/icon-round-e.png') }}" alt="Email Icon"
                                 class="w-5 h-auto" loading="lazy" decoding="async" />
-                            <a href="mailto:admin@alhazenschool.com" aria-label="Email Alhazen School" class="hover:font-bold">admin@alhazenschool.com</a>
+                            <a href="mailto:admin@alhazenschool.sch.id" aria-label="Email Alhazen School" class="hover:font-bold">admin@alhazenschool.sch.id</a>
                         </li>
                         <li class="flex gap-2 flex-row items-center">
                             <img src="{{ asset('assets/kids/footer/icon-round-w.png') }}" alt="Phone Icon"
