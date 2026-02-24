@@ -14,7 +14,7 @@
         ['route' => 'k-12-kindergarten', 'label' => 'Kindergarten'],
         ['route' => 'k-12-primary-school', 'label' => 'Primary School'],
         ['route' => 'k-12-junior-high-school', 'label' => 'Junior High School'],
-        ['route' => 'k-12-high-school', 'label' => 'High School'],
+        [ 'route' => 'k-12-high-school', 'label' => 'High School', 'disabled' => true, 'badge' => 'Coming Soon', ],
     ];
 
     $isActive = fn($name) => (request()->routeIs($name)
@@ -63,10 +63,28 @@
                                 class="absolute left-0 mt-3 w-56 rounded-xl border border-neutral bg-background shadow-lg py-2 z-50">
 
                                 @foreach ($moreK12Nav as $more)
-                                    <a href="{{ route($more['route']) }}"
-                                        class="block px-4 py-2.5 text-sm {{ request()->routeIs($more['route']) ? 'font-medium text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} hover:bg-neutral/40 transition">
-                                        {{ $more['label'] }}
-                                    </a>
+                                    @if (!empty($more['disabled']))
+                                        <div
+                                            class="flex items-center justify-between px-4 py-2.5 text-sm
+                                                text-[var(--color-text)]/40 cursor-not-allowed select-none">
+                                            <span>{{ $more['label'] }}</span>
+
+                                            <span
+                                                class="ml-2 text-[10px] px-2 py-0.5 rounded-full
+                                                    bg-neutral text-[var(--color-text)]/60">
+                                                {{ $more['badge'] ?? 'Coming Soon' }}
+                                            </span>
+                                        </div>
+                                    @else
+                                        <a href="{{ route($more['route']) }}"
+                                            class="block px-4 py-2.5 text-sm
+                                            {{ request()->routeIs($more['route'])
+                                                ? 'font-medium text-[var(--color-text)]/100'
+                                                : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }}
+                                            hover:bg-neutral/40 transition">
+                                            {{ $more['label'] }}
+                                        </a>
+                                    @endif
                                 @endforeach
                             </div>
                         </li>
@@ -137,12 +155,30 @@
                                 </button>
 
                                 <div x-show="openProgram" x-cloak class="mt-1 pb-1">
+
                                     @foreach ($moreK12Nav as $more)
-                                        <a href="{{ route($more['route']) }}"
-                                            class="block px-6 py-2 text-sm {{ request()->routeIs($more['route']) ? 'font-medium text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} hover:bg-neutral/40 transition"
-                                            @click="open = false; openProgram = false">
-                                            {{ $more['label'] }}
-                                        </a>
+                                        @if (!empty($more['disabled']))
+                                            <div
+                                                class="flex items-center justify-between px-4 py-2.5 text-sm
+                                                    text-[var(--color-text)]/40 cursor-not-allowed select-none">
+                                                <span>{{ $more['label'] }}</span>
+
+                                                <span
+                                                    class="ml-2 text-[10px] px-2 py-0.5 rounded-full
+                                                        bg-neutral text-[var(--color-text)]/60">
+                                                    {{ $more['badge'] ?? 'Coming Soon' }}
+                                                </span>
+                                            </div>
+                                        @else
+                                            <a href="{{ route($more['route']) }}"
+                                                class="block px-4 py-2.5 text-sm
+                                                {{ request()->routeIs($more['route'])
+                                                    ? 'font-medium text-[var(--color-text)]/100'
+                                                    : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }}
+                                                hover:bg-neutral/40 transition">
+                                                {{ $more['label'] }}
+                                            </a>
+                                        @endif
                                     @endforeach
                                 </div>
                             </li>
