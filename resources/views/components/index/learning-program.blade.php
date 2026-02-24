@@ -87,7 +87,7 @@
                                 flex flex-col min-h-[500px] lg:min-h-[580px] 2xl:min-h-[550px]">
 
                                 <img src="{{ asset($program['image']) }}"
-                                    class="w-full h-40 sm:h-44 lg:h-48 object-cover rounded-2xl mb-5"
+                                    class="w-full h-40 sm:h-44 lg:h-48 object-cover rounded-2xl mb-5 brightness-70"
                                     alt="{{ $program['title'] }}">
 
                                 <h3 class="text-h4 font-bold mb-3 text-justify">

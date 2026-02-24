@@ -13,7 +13,7 @@
 
     <x-index.learning-program />
 
-    <x-articles />
+    {{-- <x-articles /> --}}
 
     <x-cta-trial-class />
 

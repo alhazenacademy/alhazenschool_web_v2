@@ -6,7 +6,7 @@
         ['route' => 'about', 'label' => 'About'],
         ['route' => 'program', 'label' => 'Learning System'],
         ['route' => 'admission', 'label' => 'Admission'],
-        ['route' => 'blog', 'label' => 'Blog'],
+        // ['route' => 'blog', 'label' => 'Blog'],
     ];
 
     // Dropdown "K-12"
