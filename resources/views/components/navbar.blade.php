@@ -9,12 +9,13 @@
         ['route' => 'blog', 'label' => 'Blog'],
     ];
 
-    // // Dropdown "Primary School"
-    // $morePrimarySchoolNav = [
-    //     ['route' => 'full-online-group-learning', 'label' => 'Full Online Group Learning'],
-    //     ['route' => 'hybrid-group-learning', 'label' => 'Hybrid Group Learning'],
-    //     ['route' => 'guided-self-learning', 'label' => 'Guided Self Learning'],
-    // ];
+    // Dropdown "K-12"
+    $moreK12Nav = [
+        ['route' => 'k-12-kindergarten', 'label' => 'Kindergarten'],
+        ['route' => 'k-12-primary-school', 'label' => 'Primary School'],
+        ['route' => 'k-12-junior-high-school', 'label' => 'Junior High School'],
+        ['route' => 'k-12-high-school', 'label' => 'High School'],
+    ];
 
     $isActive = fn($name) => (request()->routeIs($name)
         ? 'font-bold text-[var(--color-text)]/100'
@@ -45,13 +46,13 @@
                         </a>
                     </li>
 
-                    {{-- Dropdown Primary School --}}
-                    {{-- @if ($item['route'] === 'program' && !empty($morePrimarySchoolNav))
+                    {{-- Dropdown K-12 --}}
+                    @if ($item['route'] === 'program' && !empty($moreK12Nav))
                         <li x-data="{ openMore: false }" class="relative">
                             <button type="button"
                                 @click="openMore = !openMore"@keydown.escape.window="openMore = false"
-                                class="inline-flex items-center gap-1 text-nav {{ request()->routeIs(collect($morePrimarySchoolNav)->pluck('route')->all()) ? 'font-bold text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} pb-1 transition-all duration-200 ease-in-out">
-                                <span>Primary School</span>
+                                class="inline-flex items-center gap-1 text-nav {{ request()->routeIs(collect($moreK12Nav)->pluck('route')->all()) ? 'font-bold text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} pb-1 transition-all duration-200 ease-in-out">
+                                <span>K-12</span>
                                 <svg class="w-3.5 h-3.5" :class="{ 'rotate-180': openMore }" viewBox="0 0 20 20" fill="none">
                                     <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -61,7 +62,7 @@
                                 x-transition.origin.top.right
                                 class="absolute left-0 mt-3 w-56 rounded-xl border border-neutral bg-background shadow-lg py-2 z-50">
 
-                                @foreach ($morePrimarySchoolNav as $more)
+                                @foreach ($moreK12Nav as $more)
                                     <a href="{{ route($more['route']) }}"
                                         class="block px-4 py-2.5 text-sm {{ request()->routeIs($more['route']) ? 'font-medium text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} hover:bg-neutral/40 transition">
                                         {{ $more['label'] }}
@@ -69,7 +70,7 @@
                                 @endforeach
                             </div>
                         </li>
-                    @endif --}}
+                    @endif
 
                 @endforeach
             </ul>
@@ -121,13 +122,13 @@
                             </a>
                         </li>
 
-                        {{-- Dropdown Primary School --}}
-                        @if ($item['route'] === 'program' && !empty($morePrimarySchoolNav))
+                        {{-- Dropdown K-12 --}}
+                        @if ($item['route'] === 'program' && !empty($moreK12Nav))
                             <li x-data="{ openProgram: false }">
                                 <button type="button" @click="openProgram = !openProgram"
-                                    class="w-full flex items-center justify-between px-4 py-2 text-nav {{ request()->routeIs(collect($morePrimarySchoolNav)->pluck('route')->all()) ? 'font-medium text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} transition-all duration-200 ease-in-out">
+                                    class="w-full flex items-center justify-between px-4 py-2 text-nav {{ request()->routeIs(collect($moreK12Nav)->pluck('route')->all()) ? 'font-medium text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} transition-all duration-200 ease-in-out">
 
-                                    <span>Primary School</span>
+                                    <span>K-12</span>
                                     <svg class="w-3.5 h-3.5" :class="{ 'rotate-180': openProgram }" viewBox="0 0 20 20"
                                         fill="none">
                                         <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6"
@@ -136,7 +137,7 @@
                                 </button>
 
                                 <div x-show="openProgram" x-cloak class="mt-1 pb-1">
-                                    @foreach ($morePrimarySchoolNav as $more)
+                                    @foreach ($moreK12Nav as $more)
                                         <a href="{{ route($more['route']) }}"
                                             class="block px-6 py-2 text-sm {{ request()->routeIs($more['route']) ? 'font-medium text-[var(--color-text)]/100' : 'text-[var(--color-text)]/50 hover:text-[var(--color-text)]/100' }} hover:bg-neutral/40 transition"
                                             @click="open = false; openProgram = false">

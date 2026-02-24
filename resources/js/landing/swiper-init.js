@@ -379,3 +379,14 @@ export const testimoniSwiper = new Swiper(".testimoni-swiper", {
         },
     },
 });
+
+export const k12KindergartenLearningSystemSwiper = new Swiper(".k-12-kindergarten-learning-system-swiper", {
+    modules: [Navigation, Pagination, A11y],
+    grabCursor: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: { nextEl: ".k-12-kindergarten-learning-system-next", prevEl: ".k-12-kindergarten-learning-system-prev" },
+    on: {
+    },
+});

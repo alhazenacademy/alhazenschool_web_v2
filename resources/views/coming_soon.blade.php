@@ -1,3 +1,8 @@
-<x-layout title="Alhazen Goes to School - Alhazen Academy" description="Program kerjasama untuk sekolah SD, SMP, SMA/K berupa Kurikulum Teknologi dan Ekskul Coding. Bersama membangun generasi muda emas di era teknologi." :sales-phone="0" wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi / Daftar Kelas di Alhazen Academy.">
-    <x-error.coming-soon launchAt='2026-01-31T00:00:00' />
+<x-layout 
+    title="Coming Soon"
+    description="Halaman ini sedang dalam pengembangan. Nantikan program kerjasama pendidikan teknologi dari Kami."
+    :sales-phone="0"
+    wa-message="Halo MinZen, Saya Mendapatkan Informasi dari Website. Saya Mau Konsultasi."
+>
+    <x-error.coming-soon launchAt="2026-01-31T00:00:00" />
 </x-layout>

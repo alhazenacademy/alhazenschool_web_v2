@@ -300,5 +300,28 @@ class LandingController extends Controller
 
         return view('pages.blog.show', compact('salesPhone'));
     }
+    
+    public function k_12_kindergarten() {
+        $salesPhone = "082110004351";
 
+        return view('pages.k-12.kindergarten', compact('salesPhone'));
+    }
+    
+    public function k_12_primary_school() {
+        $salesPhone = "082110004351";
+
+        return view('pages.k-12.primary-school', compact('salesPhone'));
+    }
+    
+    public function k_12_junior_high_school() {
+        $salesPhone = "082110004351";
+
+        return view('pages.k-12.junior-high-school', compact('salesPhone'));
+    }
+    
+    public function k_12_high_school() {
+        $salesPhone = "082110004351";
+
+        return view('pages.k-12.high-school', compact('salesPhone'));
+    }
 }
