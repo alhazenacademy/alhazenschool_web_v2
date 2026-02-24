@@ -5,7 +5,7 @@
             'desc' =>
                 'A structured online group learning program designed to support students through interactive virtual classes while maintaining academic quality and Islamic values.',
             'list' => ['Group-based online learning sessions', 'Interactive discussions and guided instruction'],
-            'image' => asset('assets/kids/primary-school/our-programs-img-1.webp'),
+            'image' => asset('assets/kids/program/more/our-programs-img-1.webp'),
             'route' => route('full-online-group-learning'),
         ],
         [
@@ -13,7 +13,7 @@
             'desc' =>
                 'A balanced learning program that combines face-to-face sessions and online classes to support academic growth, social interaction, and learning flexibility.',
             'list' => ['Combination of offline and online learning method', 'Scheduled face-to-face classes with teachers'],
-            'image' => asset('assets/kids/primary-school/our-programs-img-2.webp'),
+            'image' => asset('assets/kids/program/more/our-programs-img-2.webp'),
             'route' => route('hybrid-group-learning'),
         ],
         [
@@ -21,17 +21,17 @@
             'desc' =>
                 'An independent learning program supported by structured guidance, digital resources, and regular evaluations to build responsibility and learning confidence.',
             'list' => ['Parent-guided learning with structured syllabus', 'Access to learning modules and digital resources'],
-            'image' => asset('assets/kids/primary-school/our-programs-img-3.webp'),
+            'image' => asset('assets/kids/program/more/our-programs-img-3.webp'),
             'route' => route('guided-self-learning'),
         ],
     ];
 @endphp
-<section id="primary-school-our-programs" class="relative py-12 lg:py-24">
+<section id="program-more-our-programs" class="relative py-12 lg:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
         <!-- Orange Wrapper -->
         <div class="relative rounded-[40px] px-4 sm:px-8 lg:px-20 py-12 lg:py-16 bg-no-repeat bg-center bg-cover bg-primary shadow-lg"
-            style="background-image: url('{{ asset('assets/kids/primary-school/our-programs-bg.webp') }}');">
+            style="background-image: url('{{ asset('assets/kids/program/more/our-programs-bg.webp') }}');">
             <!-- Header -->
             <div class="text-center text-white max-w-3xl mx-auto mb-10 lg:mb-14">
                 <div class="mb-5">
@@ -50,7 +50,7 @@
 
             <!-- Slider Card -->
             <div class="relative max-w-5xl mx-auto">
-                <div class="swiper primary-our-programs-swiper">
+                <div class="swiper program-more-our-programs-swiper">
 
                     <div class="swiper-wrapper">
                         @foreach ($slides as $slide)
@@ -114,7 +114,7 @@
 
                 <!-- Navigation -->
                 <button
-                    class="primary-our-programs-prev absolute -left-4 lg:left-[-20px] top-1/2 -translate-y-1/2 z-10 h-9 w-9 lg:h-10 lg:w-10 rounded-full bg-secondary text-white shadow-lg flex items-center justify-center">
+                    class="program-more-our-programs-prev absolute -left-4 lg:left-[-20px] top-1/2 -translate-y-1/2 z-10 h-9 w-9 lg:h-10 lg:w-10 rounded-full bg-secondary text-white shadow-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 lg:w-6 lg:h-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -122,7 +122,7 @@
                 </button>
 
                 <button
-                    class="primary-our-programs-next absolute -right-4 lg:right-[-20px] top-1/2 -translate-y-1/2 z-10 h-9 w-9 lg:h-10 lg:w-10 rounded-full bg-secondary text-white shadow-lg flex items-center justify-center">
+                    class="program-more-our-programs-next absolute -right-4 lg:right-[-20px] top-1/2 -translate-y-1/2 z-10 h-9 w-9 lg:h-10 lg:w-10 rounded-full bg-secondary text-white shadow-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 lg:w-6 lg:h-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />

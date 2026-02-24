@@ -4,7 +4,7 @@
         <!-- Badge -->
         <div class="mb-5">
             <span class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
-                Our Programs
+                Learning System
             </span>
         </div>
 

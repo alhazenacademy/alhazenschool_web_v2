@@ -7,7 +7,7 @@
     'floatingCardsText' => 'This is Floating Cards Text',
 ])
 
-<section id="primary-school-hero" class="relative overflow-hidden py-12 lg:py-20">
+<section id="program-more-hero" class="relative overflow-hidden py-12 lg:py-20">
     <div class="relative mx-auto max-w-7xl px-6">
         <div class="flex flex-col md:flex-row items-center gap-20">
             <div>
@@ -45,7 +45,7 @@
 
             <div class="flex-shrink-0 hidden md:block">
                 <div class="relative">
-                    <img src="{{ $image ?? asset('assets/kids/primary-school/full-online-group-learning/hero-img.webp') }}"
+                    <img src="{{ $image ?? asset('assets/kids/program/more/full-online-group-learning/hero-img.webp') }}"
                         alt="{{ $imageAlt }}"
                         class="w-140 h-130 object-cover rounded-[32px] brightness-70">
 

@@ -64,7 +64,7 @@
     ],
 ])
 
-<section id="primary-school-learning-program" class="relative overflow-hidden py-12 lg:py-20">
+<section id="program-more-learning-program" class="relative overflow-hidden py-12 lg:py-20">
     <div class="relative mx-auto max-w-7xl px-6 lg:mt-30">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="mb-5">

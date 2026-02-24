@@ -11,19 +11,7 @@
                 'Structured curriculum with clear learning objectives',
                 'Suitable for students needing flexibility without location limits',
             ],
-            'prices' => [
-                [
-                    'label' => 'Online',
-                    'color' => '#00D4AF',
-                    'text' => 'By Request',
-                ],
-                [
-                    'label' => 'Offline',
-                    'color' => '#FFBF92',
-                    'text' => 'By Request',
-                ],
-            ],
-            'message' => 'Halo Tim Alhazen School, saya ingin menanyakan informasi lebih lanjut mengenai program Full Online Group Learning (sistem pembelajaran online, jadwal kelas, biaya, dan pendaftaran). Terima kasih.'
+            'learn_more' => route('full-online-group-learning'),
         ],
         [
             'border' => 'border-aditional-orange',
@@ -39,19 +27,7 @@
                 'Maintains flexibility with online learning days',
                 'Ideal for students who need structure and adaptability',
             ],
-            'prices' => [
-                [
-                    'label' => 'Online',
-                    'color' => '#00D4AF',
-                    'text' => 'By Request',
-                ],
-                [
-                    'label' => 'Hybrid',
-                    'color' => '#FFBF92',
-                    'text' => 'By Request',
-                ],
-            ],
-            'message' => 'Halo Tim Alhazen School, saya ingin menanyakan informasi lebih lanjut mengenai program Hybrid Group Learning (kombinasi kelas online & tatap muka, jadwal belajar, biaya, dan pendaftaran). Terima kasih.'
+            'learn_more' => route('hybrid-group-learning'),
         ],
         [
             'border' => 'border-aditional-purple',
@@ -67,14 +43,7 @@
                 'Encourages independence and self-discipline',
                 'Suitable for families who want active involvement at home',
             ],
-            'prices' => [
-                [
-                    'label' => 'Online',
-                    'color' => '#00D4AF',
-                    'text' => 'By Request',
-                ],
-            ],
-            'message' => 'Halo Tim Alhazen School, saya ingin menanyakan informasi lebih lanjut mengenai program Guided Self Learning (pembelajaran mandiri dengan pendampingan, sistem belajar, biaya, dan pendaftaran). Terima kasih.'
+            'learn_more' => route('guided-self-learning'),
         ],
     ],
 
@@ -156,28 +125,10 @@
 
                     <hr class="mb-5">
 
-                    {{-- Prices --}}
-                    @foreach ($program['prices'] as $price)
-                        <div class="mb-2">
-                            <span class="inline-flex items-center px-3 py-1 text-small font-bold rounded-full border"
-                                style="background-color: {{ $price['color'] }}; border-color: {{ $price['color'] }};">
-                                {{ $price['label'] }}
-                            </span>
-                        </div>
-
-                        <h4 class="text-h4 font-bold mb-5">
-                            {{ $price['text'] }}
-                            <span class="text-small font-medium">/month</span>
-                        </h4>
-                    @endforeach
-
-                    @php
-                        $link_contact_us = 'https://wa.me/' . $sales_phone . '?text=' . urlencode($program['message']);
-                    @endphp
                     <div class="mx-auto mt-10">
-                        <a href="{{ $link_contact_us }}"
+                        <a href="{{ $program['learn_more'] }}"
                             class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-background font-semibold shadow-lg transition-transform duration-200 hover:scale-105">
-                            <span>Contact Us</span>
+                            <span>Learn More</span>
 
                             <span
                                 class="flex items-center justify-center w-7 h-7 rounded-full bg-secondary text-background">

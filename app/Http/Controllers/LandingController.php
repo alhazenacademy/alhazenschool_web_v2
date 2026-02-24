@@ -266,25 +266,25 @@ class LandingController extends Controller
         return view('pages.admission', compact('salesPhone'));
     }
 
-    public function primary_school_full_online_group()
+    public function program_full_online_group()
     {   
         $salesPhone = "082110004351";
 
-        return view('pages.primary-school.full-online-group-learning', compact('salesPhone'));
+        return view('pages.program.full-online-group-learning', compact('salesPhone'));
     }
 
-    public function primary_school_hybrid_group()
+    public function program_hybrid_group()
     {   
         $salesPhone = "082110004351";
 
-        return view('pages.primary-school.hybrid-group-learning', compact('salesPhone'));
+        return view('pages.program.hybrid-group-learning', compact('salesPhone'));
     }
 
-    public function primary_school_guided_self()
+    public function program_guided_self()
     {   
         $salesPhone = "082110004351";
 
-        return view('pages.primary-school.guided-self-learning', compact('salesPhone'));
+        return view('pages.program.guided-self-learning', compact('salesPhone'));
     }
 
     public function blog()

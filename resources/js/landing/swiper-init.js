@@ -298,7 +298,7 @@ export const learningProgramSwiper = new Swiper(".learningProgramSwiper", {
     },
 });
 
-export const primaryProgramObjectiveSwiper = new Swiper(".primary-program-objective-swiper", {
+export const programMoreProgramObjectiveSwiper = new Swiper(".program-more-program-objective-swiper", {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: false,
@@ -325,7 +325,7 @@ export const primaryProgramObjectiveSwiper = new Swiper(".primary-program-object
     },
 });
 
-export const primaryEducatorsSwiper = new Swiper(".primary-educators-swiper", {
+export const programMoreEducatorsSwiper = new Swiper(".program-more-educators-swiper", {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: false,
@@ -352,13 +352,13 @@ export const primaryEducatorsSwiper = new Swiper(".primary-educators-swiper", {
     },
 });
 
-export const primaryOurProgramsSwiper = new Swiper(".primary-our-programs-swiper", {
+export const programMoreOurProgramsSwiper = new Swiper(".program-more-our-programs-swiper", {
     modules: [Navigation, Pagination, A11y],
     grabCursor: true,
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
-    navigation: { nextEl: ".primary-our-programs-next", prevEl: ".primary-our-programs-prev" },
+    navigation: { nextEl: ".program-more-our-programs-next", prevEl: ".program-more-our-programs-prev" },
     on: {
     },
 });

@@ -2,7 +2,7 @@
     'assesments' => [
         [
             'bg' => 'additional-blue',
-            'image' => 'assets/kids/primary-school/learning-method-img.webp',
+            'image' => 'assets/kids/program/more/learning-method-img.webp',
             'title' => 'Discussion <br> Method',
             'title_plain' => 'Discussion Method',
             'subtitle' => 'Discussion Method',
@@ -10,7 +10,7 @@
         ],
         [
             'bg' => 'additional-orange',
-            'image' => 'assets/kids/primary-school/learning-method-img.webp',
+            'image' => 'assets/kids/program/more/learning-method-img.webp',
             'title' => 'Game Based <br> Learning',
             'title_plain' => 'Game Based Learning',
             'subtitle' => 'Learning Through Play',
@@ -18,7 +18,7 @@
         ],
         [
             'bg' => 'additional-purple',
-            'image' => 'assets/kids/primary-school/learning-method-img.webp',
+            'image' => 'assets/kids/program/more/learning-method-img.webp',
             'title' => 'Project Based <br> Learning',
             'title_plain' => 'Project Based Learning',
             'subtitle' => 'Collaborative Exploration',
@@ -27,7 +27,7 @@
     ],
 ])
 
-<section id="primary-school-learning-method" class="relative py-12 lg:py-20">
+<section id="program-more-learning-method" class="relative py-12 lg:py-20">
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Section Header -->

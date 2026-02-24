@@ -4,7 +4,7 @@
     'objectives' => [],
 ])
 
-<section id="primary-school-program-objective" class="relative overflow-hidden py-12 lg:py-40">
+<section id="program-more-program-objective" class="relative overflow-hidden py-12 lg:py-40">
     <div class="relative mx-auto max-w-7xl px-6">
         <div class="max-w-lg">
             <!-- Badge -->
@@ -30,7 +30,7 @@
     <!-- RIGHT SLIDER -->
     <div class="relative lg:absolute lg:top-10 xl:top-10 2xl:top-10 lg:right-0 lg:w-[500px] xl:w-[700px] 2xl:w-[1000px]">
         <div class="pl-6 lg:pl-12 overflow-visible">
-            <div class="swiper primary-program-objective-swiper cursor-grab">
+            <div class="swiper program-more-program-objective-swiper cursor-grab">
                 <div class="swiper-wrapper">
                     @foreach ($objectives as $item)
                         <div class="swiper-slide w-[500px] shrink-0">
@@ -38,7 +38,7 @@
                                 class="{{ $item['bg'] ?? 'additional-blue' }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col min-h-[500px] lg:min-h-[550px] 2xl:min-h-[520px]">
 
                                 <div class="h-[200px] rounded-2xl overflow-hidden mb-6 shrink-0">
-                                    <img src="{{ $item['image'] ?? asset('assets/kids/primary-school/program-objective-img.webp') }}"
+                                    <img src="{{ $item['image'] ?? asset('assets/kids/program/more/program-objective-img.webp') }}"
                                         alt="{{ $item['title'] }}"
                                         class="w-full h-full object-cover object-top brightness-75">
                                 </div>

@@ -34,7 +34,7 @@
     ],
 ])
 
-<section id="primary-school-school-facilities" class="relative py-12 lg:py-20">
+<section id="program-more-school-facilities" class="relative py-12 lg:py-20">
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- LEFT CONTENT -->
@@ -76,10 +76,10 @@
 
             <!-- RIGHT CONTENT -->
             <div class="grid grid-cols-1 gap-4">
-                <img src="{{ asset('assets/kids/primary-school/school-facilities-img-1.webp') }}" alt="Family Learning" class="rounded-3xl w-full h-70 object-cover brightness-70">
+                <img src="{{ asset('assets/kids/program/more/school-facilities-img-1.webp') }}" alt="Family Learning" class="rounded-3xl w-full h-70 object-cover brightness-70">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <img src="{{ asset('assets/kids/primary-school/school-facilities-img-2.webp') }}" alt="Parent Support" class="rounded-3xl w-full h-full object-cover brightness-70">
+                    <img src="{{ asset('assets/kids/program/more/school-facilities-img-2.webp') }}" alt="Parent Support" class="rounded-3xl w-full h-full object-cover brightness-70">
 
                     <!-- Highlight Card -->
                     <div class="bg-accent text-white rounded-3xl p-8 flex flex-col justify-between">

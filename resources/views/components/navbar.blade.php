@@ -4,17 +4,17 @@
     $nav = [
         ['route' => 'home', 'label' => 'Home'],
         ['route' => 'about', 'label' => 'About'],
-        ['route' => 'program', 'label' => 'Program'],
+        ['route' => 'program', 'label' => 'Learning System'],
         ['route' => 'admission', 'label' => 'Admission'],
         ['route' => 'blog', 'label' => 'Blog'],
     ];
 
-    // Dropdown "Primary School"
-    $morePrimarySchoolNav = [
-        ['route' => 'full-online-group-learning', 'label' => 'Full Online Group Learning'],
-        ['route' => 'hybrid-group-learning', 'label' => 'Hybrid Group Learning'],
-        ['route' => 'guided-self-learning', 'label' => 'Guided Self Learning'],
-    ];
+    // // Dropdown "Primary School"
+    // $morePrimarySchoolNav = [
+    //     ['route' => 'full-online-group-learning', 'label' => 'Full Online Group Learning'],
+    //     ['route' => 'hybrid-group-learning', 'label' => 'Hybrid Group Learning'],
+    //     ['route' => 'guided-self-learning', 'label' => 'Guided Self Learning'],
+    // ];
 
     $isActive = fn($name) => (request()->routeIs($name)
         ? 'font-bold text-[var(--color-text)]/100'
@@ -46,7 +46,7 @@
                     </li>
 
                     {{-- Dropdown Primary School --}}
-                    @if ($item['route'] === 'program' && !empty($morePrimarySchoolNav))
+                    {{-- @if ($item['route'] === 'program' && !empty($morePrimarySchoolNav))
                         <li x-data="{ openMore: false }" class="relative">
                             <button type="button"
                                 @click="openMore = !openMore"@keydown.escape.window="openMore = false"
@@ -69,7 +69,7 @@
                                 @endforeach
                             </div>
                         </li>
-                    @endif
+                    @endif --}}
 
                 @endforeach
             </ul>

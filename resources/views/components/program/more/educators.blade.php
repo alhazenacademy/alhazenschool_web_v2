@@ -21,7 +21,7 @@
     ],
 ])
 
-<section id="primary-school-educators" class="relative overflow-hidden py-12 lg:py-40">
+<section id="program-more-educators" class="relative overflow-hidden py-12 lg:py-40">
     <div class="relative mx-auto max-w-7xl px-6">
         <div class="max-w-lg">
             <!-- Badge -->
@@ -50,7 +50,7 @@
     <!-- RIGHT SLIDER -->
     <div class="relative lg:absolute lg:top-20 xl:top-20 2xl:top-15 lg:right-0 lg:w-[500px] xl:w-[700px] 2xl:w-[1000px]">
         <div class="pl-6 lg:pl-12 overflow-visible">
-            <div class="swiper primary-educators-swiper cursor-grab">
+            <div class="swiper program-more-educators-swiper cursor-grab">
                 <div class="swiper-wrapper">
                     @foreach ($educators as $item)
                         <div class="swiper-slide w-[500px] shrink-0">
@@ -58,7 +58,7 @@
                                 class="{{ $item['bg'] ?? 'additional-blue' }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col min-h-[500px] lg:min-h-[430px] 2xl:min-h-[480px]">
 
                                 <div class="rounded-2xl overflow-hidden mb-6 shrink-0 flex-1 h-full">
-                                    <img src="{{ $item['image'] ?? asset('assets/kids/primary-school/educators-img.png') }}"
+                                    <img src="{{ $item['image'] ?? asset('assets/kids/program/more/educators-img.png') }}"
                                         alt="{{ $item['name'] }}" class="w-full h-full object-cover object-top">
                                 </div>
 

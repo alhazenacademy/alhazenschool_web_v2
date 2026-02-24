@@ -4,15 +4,15 @@
 
     // daftar gambar kelas
     'images' => [
-        asset('assets/kids/primary-school/school-gallery/1.webp'),
-        asset('assets/kids/primary-school/school-gallery/7.webp'),
-        asset('assets/kids/primary-school/school-gallery/3.webp'),
-        asset('assets/kids/primary-school/school-gallery/9.webp'),
-        asset('assets/kids/primary-school/school-gallery/5.webp'),
+        asset('assets/kids/program/more/school-gallery/1.webp'),
+        asset('assets/kids/program/more/school-gallery/7.webp'),
+        asset('assets/kids/program/more/school-gallery/3.webp'),
+        asset('assets/kids/program/more/school-gallery/9.webp'),
+        asset('assets/kids/program/more/school-gallery/5.webp'),
     ],
 ])
 
-<section id="primary-school-school-gallery" class="relative py-16 sm:py-20">
+<section id="program-more-school-gallery" class="relative py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div class="text-center max-w-3xl mx-auto mb-16">

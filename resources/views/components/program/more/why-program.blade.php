@@ -7,12 +7,12 @@
     'imageAlt' => 'Hero Image',
 ])
 
-<section id="primary-school-why-program" class="relative overflow-hidden py-12 lg:py-20">
+<section id="program-more-why-program" class="relative overflow-hidden py-12 lg:py-20">
     <div class="relative mx-auto max-w-7xl px-6 lg:my-30">
         <div class="flex flex-col lg:flex-row items-center gap-20">
             <div class="flex-shrink-0">
                 <div class="relative">
-                    <img src="{{ $image ?? asset('assets/kids/primary-school/why-program-img.webp') }}"
+                    <img src="{{ $image ?? asset('assets/kids/program/more/why-program-img.webp') }}"
                         alt="{{ $imageAlt }}"
                         class="w-140 h-100 object-cover rounded-[32px] brightness-70">
                 </div>

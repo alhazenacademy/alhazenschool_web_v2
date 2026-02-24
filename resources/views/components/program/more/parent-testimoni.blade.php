@@ -23,12 +23,12 @@
         ],
     ];
 @endphp
-<section id="primary-school-parent-testimoni" class="relative py-12 lg:py-24">
+<section id="program-more-parent-testimoni" class="relative py-12 lg:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
         <!-- Orange Wrapper -->
         <div class="relative rounded-[40px] px-4 sm:px-8 lg:px-20 py-12 lg:py-16 bg-no-repeat bg-center bg-cover bg-accent shadow-lg"
-            style="background-image: url('{{ asset('assets/kids/primary-school/parent-testimoni-bg.webp') }}');">
+            style="background-image: url('{{ asset('assets/kids/program/more/parent-testimoni-bg.webp') }}');">
             <!-- Header -->
             <div class="text-center text-white max-w-3xl mx-auto mb-10 lg:mb-14">
                 <div class="mb-5">
