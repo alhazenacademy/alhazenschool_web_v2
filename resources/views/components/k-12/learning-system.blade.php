@@ -1,34 +1,9 @@
-@php
-    $slides = [
-        [
-            'title' => 'Online Group Classes',
-            'desc' =>
-                'All classes are conducted online with live interaction between teachers and children.',
-            'features' => [
-                [
-                    'label' => 'Platform',
-                    'value' => 'Zoom',
-                    'type' => 'badge',
-                    'icon' => 'video',
-                ],
-                [
-                    'label' => 'Class Size',
-                    'value' => 'Maximum 10 children per class',
-                    'type' => 'icon',
-                    'icon' => 'users',
-                ],
-                [
-                    'label' => 'Duration',
-                    'value' => '1 academic year',
-                    'type' => 'icon',
-                    'icon' => 'calendar',
-                ],
-            ],
-            'image' => asset('assets/kids/program/more/our-programs-img-1.webp'),
-        ],
-    ];
-@endphp
-<section id="k-12-kindergarten-learning-system" class="relative py-12 lg:py-24">
+@props([
+    'title' => 'This is title',
+    'description' => 'This is description',
+    'slides' => [],
+])
+<section id="k-12-learning-system" class="relative py-12 lg:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
         <!-- Orange Wrapper -->
@@ -43,10 +18,10 @@
                     </span>
                 </div>
                 <h2 class="text-h2 font-bold italic leading-tight mb-5">
-                    A Structured Learning System
+                    {{ $title }}
                 </h2>
                 <p class="text-body">
-                    A structured and interactive online learning system that supports academic growth, Islamic values, and joyful learning for young children.
+                    {{ $description }}
                 </p>
             </div>
 
@@ -83,39 +58,9 @@
                                         @foreach ($slide['features'] as $feature)
                                             <li class="flex items-start gap-3">
                                                 {{-- Icon --}}
-                                                <span
-                                                    class="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 text-primary shrink-0">
-
-                                                    @switch($feature['icon'])
-                                                        @case('video')
-                                                            {{-- Video Icon --}}
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
-                                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                                <path
-                                                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14V10z" />
-                                                                <rect x="3" y="6" width="12" height="12" rx="2" />
-                                                            </svg>
-                                                        @break
-
-                                                        @case('users')
-                                                            {{-- Users Icon --}}
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
-                                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                                <path d="M12 12a5 5 0 100-10 5 5 0 000 10z"/> <path d="M4 20a8 8 0 1116 0H4z"/>
-                                                            </svg>
-                                                        @break
-
-                                                        @case('calendar')
-                                                            {{-- Calendar Icon --}}
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
-                                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M8 7V3M16 7V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                                            </svg>
-                                                        @break
-                                                    @endswitch
+                                                <span class="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 text-primary shrink-0">
+                                                    {!! $feature['icon'] !!}
                                                 </span>
-
                                                 {{-- Text --}}
                                                 <div class="flex flex-wrap items-center gap-2 mt-1">
                                                     <span class="font-semibold">{{ $feature['label'] }}</span>
