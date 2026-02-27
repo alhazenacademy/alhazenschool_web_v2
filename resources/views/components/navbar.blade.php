@@ -13,7 +13,7 @@
     $moreK12Nav = [
         ['route' => 'k-12-kindergarten', 'label' => 'Kindergarten'],
         ['route' => 'k-12-primary-school', 'label' => 'Primary School'],
-        ['route' => 'k-12-junior-high-school', 'label' => 'Junior High School'],
+        ['route' => 'k-12-junior-high-school', 'label' => 'Junior High School', 'disabled' => true, 'badge' => 'Coming Soon',],
         [ 'route' => 'k-12-high-school', 'label' => 'High School', 'disabled' => true, 'badge' => 'Coming Soon', ],
     ];
 
@@ -60,7 +60,7 @@
 
                             <div x-show="openMore" x-cloak @click.outside="openMore = false"
                                 x-transition.origin.top.right
-                                class="absolute left-0 mt-3 w-56 rounded-xl border border-neutral bg-background shadow-lg py-2 z-50">
+                                class="absolute left-0 mt-3 min-w-60 rounded-xl border border-neutral bg-background shadow-lg py-2 z-50">
 
                                 @foreach ($moreK12Nav as $more)
                                     @if (!empty($more['disabled']))
@@ -70,7 +70,7 @@
                                             <span>{{ $more['label'] }}</span>
 
                                             <span
-                                                class="ml-2 text-[10px] px-2 py-0.5 rounded-full
+                                                class="ml-2 shrink-0 text-[10px] px-2 py-0.5 rounded-full
                                                     bg-neutral text-[var(--color-text)]/60">
                                                 {{ $more['badge'] ?? 'Coming Soon' }}
                                             </span>
@@ -105,7 +105,7 @@
                     Login
                 </a>
 
-                <a href="{{ $link_enrollment }}" 
+                <a href="{{ $link_enrollment }}"
                 class="px-6 py-3 rounded-full text-button-large font-semibold text-white
                     bg-[var(--color-primary)]
                     shadow-sm
