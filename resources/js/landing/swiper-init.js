@@ -316,7 +316,7 @@ export const programMoreProgramObjectiveSwiper = new Swiper(".program-more-progr
         1280: {
             slidesPerView: 2,
         },
-        1536: { 
+        1536: {
             slidesPerView: 2.5,
         },
         1792: {
@@ -343,7 +343,7 @@ export const programMoreEducatorsSwiper = new Swiper(".program-more-educators-sw
         1280: {
             slidesPerView: 2,
         },
-        1536: { 
+        1536: {
             slidesPerView: 2.5,
         },
         1792: {
@@ -388,5 +388,34 @@ export const k12KindergartenLearningSystemSwiper = new Swiper(".k-12-kindergarte
     loop: true,
     navigation: { nextEl: ".k-12-kindergarten-learning-system-next", prevEl: ".k-12-kindergarten-learning-system-prev" },
     on: {
+    },
+});
+
+export const indexProgramSwiper = new Swiper('.index-program-swiper', {
+    modules: [Navigation, Pagination, A11y],
+    loop: false,
+    spaceBetween: 24,
+    grabCursor: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: '.index-program-next',
+        prevEl: '.index-program-prev',
+    },
+
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
     },
 });
