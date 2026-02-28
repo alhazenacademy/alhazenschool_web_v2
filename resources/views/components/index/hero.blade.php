@@ -50,6 +50,9 @@
                     </span>
                 </div>
 
+                <p class="text-primary font-bold tracking-widest text-body bg-primary/10 inline-block px-3 py-1 rounded">
+                    I'm Technopreneur
+                </p>
                 {{-- TITLE --}}
                 <h1 class="text-h1 font-bold italic leading-tight mb-5">
                     The 1st Global Islamic Technology Hybrid School in Indonesia

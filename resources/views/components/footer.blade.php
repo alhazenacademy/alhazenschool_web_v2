@@ -29,6 +29,10 @@
                 <div class="max-w-2xs">
                     <img src="{{ asset('assets/logo-white.png') }}" alt="Alhazen School Logo"
                         class="mb-6 w-40 h-full object-cover">
+                    
+                   <p class="text-background font-bold tracking-widest text-body mb-5 bg-white/10 inline-block px-3 py-1 rounded">
+                        I'm Technopreneur
+                    </p>
 
                     <p class="text-small text-justify mb-5">
                         Alhazen School is a Global Islamic Technology Hybrid School that delivers a balanced education
