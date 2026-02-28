@@ -32,9 +32,8 @@
 <section id="home" class="relative overflow-hidden py-20">
 
     <div class="relative mx-auto max-w-7xl px-6">
-        <div class="flex items-start">
-            <div class="max-w-[550px] xl:max-w-[600px] 2xl:max-w-[750px] pr-10 space-y-8">
-
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+            <div class="w-full max-w-[600px] space-y-8">
                 {{-- Badges --}}
                 <div class="flex gap-2">
                     <span
@@ -90,17 +89,18 @@
     <div class=" relative mt-12 lg:absolute lg:top-0 lg:right-0 lg:w-[500px] xl:w-[680px] 2xl:w-[768px] lg:mt-0 lg:pt-20 px-5 lg:px-0 flex items-start">
         <div class="w-full overflow-hidden lg:pl-10">
             <div class="swiper heroCardSwiper cursor-grab">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper flex">
                     @foreach ($heroCards as $card)
-                        <div class="swiper-slide w-[500px] shrink-0">
+                        <div class="swiper-slide h-auto !flex">
                             <div
-                                class="{{ $card['bg'] }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col min-h-[500px]">
+                                class="w-full {{ $card['bg'] }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col">
                                 <div class="h-[300px] rounded-2xl overflow-hidden mb-6 shrink-0">
                                     <img src="{{ $card['image'] }}" alt="{{ $card['title'] }}"
                                         class="w-full h-full object-cover brightness-70">
                                 </div>
-                                <div class="flex flex-col flex-1 text-center px-3">
-                                    <div class="flex-1 space-y-3">
+
+                                <div class="flex flex-col flex-grow text-center px-3">
+                                    <div class="flex-grow space-y-3">
                                         <h4 class="font-bold text-h4">
                                             {{ $card['title'] }}
                                         </h4>

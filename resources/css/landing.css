@@ -1046,3 +1046,32 @@
     margin-right: 8px;
 }
 /* End Admission */
+
+/* swiper */
+.heroCardSwiper .swiper-slide {
+    height: auto !important;
+    display: flex;
+}
+
+.heroCardSwiper .swiper-wrapper {
+    display: flex;
+}
+
+.program-more-program-objective-swiper .swiper-slide {
+    height: auto !important;
+    display: flex;
+}
+
+.program-more-program-objective-swiper .swiper-wrapper {
+    display: flex;
+}
+
+.program-more-program-objective-swiper .swiper-slide {
+    height: auto !important;
+    display: flex;
+}
+
+.program-more-program-objective-swiper .swiper-wrapper {
+    display: flex;
+}
+/* end swiper */

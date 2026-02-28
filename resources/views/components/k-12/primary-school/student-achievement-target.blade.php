@@ -35,36 +35,38 @@
 
 <section id="k-12-student-achievement-target" class="relative overflow-hidden py-12 lg:py-40">
     <div class="relative mx-auto max-w-7xl px-6">
-        <div class="max-w-lg">
-            <!-- Badge -->
-            <div class="mb-5">
-                <span
-                    class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
-                    Student Learning Outcomes
-                </span>
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+            <div class="w-full">
+                <!-- Badge -->
+                <div class="mb-5">
+                    <span
+                        class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
+                        Student Learning Outcomes
+                    </span>
+                </div>
+
+                <!-- Title -->
+                <h2 class="text-h2 font-bold italic leading-tight mb-5">
+                    {{ $title }}
+                </h2>
+
+                <!-- Description -->
+                <p class="text-body text-justify mb-5">
+                    {{ $description }}
+                </p>
             </div>
-
-            <!-- Title -->
-            <h2 class="text-h2 font-bold italic leading-tight mb-5">
-                {{ $title }}
-            </h2>
-
-            <!-- Description -->
-            <p class="text-body text-justify mb-5">
-                {{ $description }}
-            </p>
         </div>
     </div>
 
     <!-- RIGHT SLIDER -->
-    <div class="relative lg:absolute lg:top-10 xl:top-10 2xl:top-10 lg:right-0 lg:w-[500px] xl:w-[700px] 2xl:w-[1000px]">
-        <div class="pl-6 lg:pl-12 overflow-visible">
+    <div class=" relative mt-12 lg:absolute lg:top-0 lg:right-0 lg:w-[500px] xl:w-[680px] 2xl:w-[768px] lg:mt-0 lg:pt-10 px-5 lg:px-0 flex items-start">
+        <div class="w-full overflow-hidden lg:pl-10">
             <div class="swiper program-more-program-objective-swiper cursor-grab">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper flex">
                     @foreach ($objectives as $item)
-                        <div class="swiper-slide w-[500px] shrink-0">
+                        <div class="swiper-slide shrink-0 h-auto !flex">
                             <div
-                                class="{{ $item['bg'] ?? 'additional-blue' }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col min-h-[500px] lg:min-h-[520px] 2xl:min-h-[480px]">
+                                class="{{ $item['bg'] ?? 'additional-blue' }} text-white rounded-3xl shadow-xl p-6 pb-12 flex flex-col">
 
                                 <div class="h-[200px] rounded-2xl overflow-hidden mb-6 shrink-0">
                                     <img src="{{ $item['image'] ?? asset('assets/kids/program/more/program-objective-img.webp') }}"

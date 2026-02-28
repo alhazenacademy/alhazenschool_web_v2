@@ -314,7 +314,7 @@ export const programMoreProgramObjectiveSwiper = new Swiper(".program-more-progr
             slidesPerView: 1.5,
         },
         1280: {
-            slidesPerView: 2,
+            slidesPerView: 2.1,
         },
         1536: {
             slidesPerView: 2.5,

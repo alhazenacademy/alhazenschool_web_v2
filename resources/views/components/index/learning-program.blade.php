@@ -43,10 +43,10 @@
 
     <!-- Container kiri -->
     <div class="relative mx-auto max-w-7xl px-6">
-        <div class="flex items-center gap-16">
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
 
             <!-- Left Content -->
-            <div class="max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px]">
+            <div class="w-full max-w-[600px] space-y-8">
                 <div class="mb-5">
                     <span
                         class="inline-flex items-center px-3 py-1 text-small font-medium rounded-full border border-primary text-primary">
