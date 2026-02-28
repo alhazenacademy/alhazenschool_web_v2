@@ -13,7 +13,7 @@
     $moreK12Nav = [
         ['route' => 'k-12-kindergarten', 'label' => 'Kindergarten'],
         ['route' => 'k-12-primary-school', 'label' => 'Primary School'],
-        ['route' => 'k-12-junior-high-school', 'label' => 'Junior High School', 'disabled' => true, 'badge' => 'Coming Soon',],
+        ['route' => 'k-12-junior-high-school', 'label' => 'Junior High School'],
         [ 'route' => 'k-12-high-school', 'label' => 'High School', 'disabled' => true, 'badge' => 'Coming Soon', ],
     ];
 
